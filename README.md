@@ -24,7 +24,7 @@ Due to its pre-release nature, users are likely to encounter issues when using t
     - [ ] Attach the `issue_events.txt` file you created,
     - [ ] Click the green `Submit new issue`.
 
-Mlaem developers will be automatically notified by GitHub and will tag and [prioritize](Issue_Prioritization.md) the issue.
+Mlaem developers will be automatically notified by GitHub and will [tag, prioritize, and resolve](Issue_Resolution.md) the issue.
 
 ### Making Feature Requests
 Please make feature requests by following step 6) in the issue creation process described above (but skip the "events file" step).
