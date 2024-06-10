@@ -10,6 +10,8 @@ To download the software, choose one of two methods:
 1) (Easiest) Click on the green `<> Code` button and select `Download ZIP`. Open the zip file from your file manager and run the desired executable.
 2) (Smallest Download) Click on name of the desired files in the far left side of the file list (e.g. the `Mlaem_Win11_240609.exe` and `settings.json` files) and click on `Raw` (or the copy/download icons) to download them.
 
+You may get a message "Make sure that you trust..." by Microsoft Windows. Select the `Show More` option followd by `Keep Anyway` to download the files. The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk.
+
 ### Reporting Issues
 Due to its pre-release nature, users are likely to encounter issues when using the software and are encouraged to report them following the steps below.
 
