@@ -5,9 +5,9 @@ MLAEM is currently being developed by a small team of open-source volunteers in 
 Due to the current nature of the project, this roadmap is *notional* and could change *significantly* depending on changing priorities, illnesses, workload, etc. Said in a different way, please do not make business decisions based on the roadmap and only use it as the rough and notional guide for project priorities that it was intended to be.
 
 ### Roadmap Details
-- [ ] June 2024: Alpha Pre-Release for "Modflow and More" conference
+- [x] June 2024: Alpha Pre-Release for "Modflow and More" conference
 - [ ] August 2024: Beta Pre-Release of complete (Circa 1998) Mlaem Version 5.0 port to new graphical user interface (Gui)
-    - [ ] Complete curvilinear string types
+    - [x] Complete curvilinear string types
     - [ ] Aquitard data points
     - [ ] Global aquifer tool
     - [ ] Layer Tool
