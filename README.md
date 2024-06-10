@@ -28,6 +28,7 @@ Due to its pre-release nature, users are likely to encounter issues when using t
     - [ ] Describe the problem you encounted,
     - [ ] Provide the name of the executable you used (e.g. `Mlaem_Win11_240609.exe`),
     - [ ] Attach the `issue_events.txt` file you created,
+    - [ ] Attach any MLAEM input (`.dat`) files used (note that you will need to change the `.dat` extension to `.txt`)
     - [ ] Click the green `Submit new issue`.
 
 Mlaem developers will be automatically notified by GitHub and will [tag, prioritize, and resolve](Issue_Resolution.md) the issue.
