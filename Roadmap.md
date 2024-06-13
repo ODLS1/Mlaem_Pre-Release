@@ -8,9 +8,10 @@ Due to the current nature of the project, this roadmap is *notional* and could c
 - [x] June 2024: Alpha Pre-Release for "Modflow and More" conference
 - [ ] August 2024: Beta Pre-Release of complete (Circa 1998) Mlaem Version 5.0 port to new graphical user interface (Gui)
     - [x] Complete curvilinear string types
-    - [ ] Aquitard data points
+    - [ ] Aquitard data entry
     - [ ] Global aquifer tool
     - [ ] Layer Tool
+    - [ ] WAREL element entry
     - [ ] Accuracy dialog
     - [ ] Polygon information dialog
     - [ ] Miscellaneous dialogs and features
