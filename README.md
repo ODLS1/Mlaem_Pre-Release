@@ -25,7 +25,7 @@ Due to its pre-release nature, users are likely to encounter issues when using t
 5) Start Mlaem again and do not touch the keyboard or mouse. Mlaem should play the events from the events file you recorded and duplicate the issue.
 6) When you have confirmed duplication of the issue with the events file, create a new Issue on the GitHub `Mlaem_Pre-Release` site as follows:
     - [ ] Click on the `Issues` tab on the upper-left and then click on the green `New issue` button,
-    - [ ] Describe the problem you encounted,
+    - [ ] Describe the problem you encountered,
     - [ ] Provide the name of the executable you used (e.g. `Mlaem_Win11_240609.exe`),
     - [ ] Attach the `issue_events.txt` file you created,
     - [ ] Attach any MLAEM input (`.dat`) files used (note that you will need to change the `.dat` extension to `.txt`)
