@@ -16,6 +16,11 @@ You may get one of two warning messages from Microsoft Windows.
 
 The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows.
 
+### User Tutorial
+
+The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
+
+
 ### Reporting Issues
 Due to its pre-release nature, users are likely to encounter issues when using the software and are encouraged to report them following the steps below.
 
