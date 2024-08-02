@@ -8,7 +8,17 @@ The draft roadmap for the development of Mlaem can be found [here](Roadmap.md).
 ### Download
 To download the software, choose one of two methods:
 1) (Easiest) Click on the green `<> Code` button and select `Download ZIP`. Open the zip file from your file manager and run the desired executable.
-2) (Smallest Download) Click on name of the desired files in the far left side of the file list (e.g. the `Mlaem_Win11_240607.exe` and `settings.json` files) and click on `Raw` (or the copy/download icons) to download them.
+2) (Smallest Download) Click on name of the desired files in the far left side of the file list (e.g. the `Mlaem_Win11_240716.exe` and `settings.json` files) and click on `Raw` (or the copy/download icons) to download them.
+
+You may get one of two warning messages from Microsoft Windows.
+1) If you downloaded the `ZIP` file, then you may get a warning that "Windows protected your PC". Click on `More info` and then click `Run anyway`.
+2) If you directly download the executable, you may get the message "Make sure that you trust...". Select the `Show More` option followd by `Keep Anyway` to download the file.
+
+The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows.
+
+### User Tutorial
+
+The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
 
 ### Reporting Issues
 Due to its pre-release nature, users are likely to encounter issues when using the software and are encouraged to report them following the steps below.
