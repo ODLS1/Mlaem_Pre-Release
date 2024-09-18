@@ -10,11 +10,13 @@ To download the software, choose one of two methods:
 1) (Easiest) Click on the green `<> Code` button and select `Download ZIP`. Open the zip file from your file manager and run the desired executable.
 2) (Smallest Download) Click on name of the desired files in the far left side of the file list (e.g. the `Mlaem_Win11_240716.exe` and `settings.json` files) and click on `Raw` (or the copy/download icons) to download them.
 
-You may get one of two warning messages from Microsoft Windows.
+On Microsoft Windows you may get one of two warning messages:
 1) If you downloaded the `ZIP` file, then you may get a warning that "Windows protected your PC". Click on `More info` and then click `Run anyway`.
 2) If you directly download the executable, you may get the message "Make sure that you trust...". Select the `Show More` option followd by `Keep Anyway` to download the file.
 
-The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows.
+On MacOS you may get a message that the MacOS Developer signature is missing. Go into Mac `System Preferences` -> `Security and Privacy` to resolve the issue, or follow instructions in the dialog that Apple displays.
+
+The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows and will attempt to do the same for MacOS.
 
 ### User Tutorial
 
@@ -42,3 +44,4 @@ Please make feature requests by following step 6) in the issue creation process 
 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
+
