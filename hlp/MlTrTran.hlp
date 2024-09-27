@@ -1,0 +1,21 @@
+Both retardation and decay are implemented in the program. The factors
+controlling these phenomena are specified by the use of the following
+two commands:
+<RETARDATION>[FACTOR]
+                    If the retardation FACTOR is specified,
+                    retardation is activated with this factor.
+                    If the argument <OFF> is specified, retardation will
+                    be disabled. If no argument is given, the current
+                    value of the retardation factor is displayed. Note
+                    that R=1 is equivalent to no retardation. Note
+                    that R must always be greater than or equal to 1.
+<DECAY>[CONCENTRATION,DECAY]
+                    If both arguments are specified, then decay of
+                    the contaminant that is to be traced is
+                    activated.  the starting concentration is
+                    CONCENTRATION, the decay coefficient is DECAY.
+                    If no arguments are supplied, the current values
+                    of concentration and decay will be shown.
+<VALUES>            Prints the values for retardation and decay.
+<RETURN>            Returns control to the level 1 menu in the trace
+                    module.

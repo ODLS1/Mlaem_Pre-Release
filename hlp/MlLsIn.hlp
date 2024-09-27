@@ -1,0 +1,46 @@
+ This module makes it possible to enter line-sinks. The line-sinks
+may be used to model narrow creeks that may be either above the
+groundwater table or intersecting it, as well as closed boundaries.
+ The line-sinks may be chained together. Either the rate of extraction
+or the head at the center of the line-sink may be specified. The rate
+of extraction is positive for removal of water from the aquifer, and is
+measured in discharge per unit length of line-sink, i.e., in units of
+L^2/T. If the line-sinks are used to model creeks in direct contact with
+the aquifer, i.e., in cases that the heads are specified at the centers
+of the line-sinks, the user should verify, after solving the problem,
+that indeed the heads below the line-sink are at or above its level.
+ Otherwise, a run should be done with these line-sinks entered as
+elements of given strength.
+ In general, the more elements that are used to discretize the boundary,
+the more acurately the boundaries of specified head will be modeled.
+ The command words are:
+
+<LAYER>       (NUMBER)
+              Sets the layer number in which ALL subsequent information
+              will be entered and displayed.
+<GIVEN>       This command word causes the program to expect the user
+              to enter line-sinks of constant rate of extraction.
+              The program prompts for input of coordinates and
+              extraction rate as follows:
+(X1,Y1, X2,Y2, EXTRACTION RATE)[[label]]<COMMAND>
+              The program will expect such lines of input to continue
+              until another command word is entered.
+              An optional label may be entered between brackets.
+              You may return to the main menu of the module LINE-SINK
+              by entering the command COMMAND.
+<HEAD>        This command word causes the program to expect the user
+              to enter line-sinks of constant head. The program prompts
+              for input of coordinates and head as follows:
+(X1,Y1, X2,Y2, HEAD)[[label]]<COMMAND>
+              The program will expect such lines of input to continue
+              until another command word is entered.
+              An optional label may be entered between brackets.
+              You may return to the main menu of the module LINE-SINK
+              by entering the command COMMAND.
+<FCHANGE>[EL.NR.]
+              Makes it possible to change location and head of
+              head-specified line-sink number EL.NR.
+<RESET>       This command causes all parameters in the constant-
+              strength line-sink module to be reset to their default
+              values (including line-sink modules in other layers).
+<RETURN>      Returns control to the main menu.

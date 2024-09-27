@@ -1,0 +1,16 @@
+The fiplot option in the program SLAEM allows you to record any plot
+that is produced on the screen, including plots generated using the
+cursor for inputting coordinates.
+Commands:
+<RECORDING>(<ON>/<OFF>)
+              Switches recording on or off. The program will prompt you
+              for a filename. Once the recording option is set, all
+              plots will be recorded as shown. Plots that you merge by
+              the use of the PAGE OFF command will be produced as single
+              plots by PLAEM. You can use PLAEM to merge plots later.
+              All types set for lines, markers, and colors will be
+              recorded with their defaults; changes that you make in the
+              assignments of these types are ignored. You can reset
+              these types from within PLAEM, if so desired.
+<HELP>        Causes this text to be displayed.
+<RETURN>      Causes control to return to one menu back.

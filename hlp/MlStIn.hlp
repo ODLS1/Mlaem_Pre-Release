@@ -1,0 +1,53 @@
+The string module is intended for setting the geometry of curvilinear
+elements.  Strings are composed of curvilinear elements that are linked
+together in such a way that both the elements and the slope of the elements
+are continuous along the entire string.  A string may be either open
+(the two ends of the string of elements do not touch), or closed
+(the two ends of the string coincide).  The first and last elements of
+an open string may be either a curvilinear element or a straight tip 
+element.
+
+The order in which commands must be entered to input a string
+is as follows:
+
+1. Specify a key that is used to identify the string by means of the 
+command
+
+   <INPUT>(KEY)
+
+   where KEY is set of 32 or less characters.
+
+2. Specify the type of element by entering either of the following commands
+
+   <TIP>
+   <CU>
+
+   and then enter the nodes used to define the geometry for this element
+   at the
+
+   (X,Y)
+
+   prompt.
+
+3. Enter the command
+
+   RETURN
+
+   to signify that the entry of this string is complete.
+
+The following command words are also available via the command line
+interface:
+
+<STOLERANCE>(TOL)  Enter the tolerance for determining whether a line
+                   segment is straight.  If points are entered within
+                   this tolerance of a straight line, the program will
+                   determine that the element is straight and automatically
+                   move the point onto the straight line segment.
+<OPEN>             All subsequent strings will be open.
+<CLOSED>           All subsequent strings will be closed.
+<DRAW>[<ON>/<OFF>] If this command is turned on, strings will be displayed
+                   during layouts.
+<HELP>             Redisplay this help file.
+<RESET>            Reset all parameters in the string module to the
+                   default values.
+<RETURN>           Return to the main menu.

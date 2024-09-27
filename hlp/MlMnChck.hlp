@@ -1,0 +1,83 @@
+  The check routine is intended to provide access to data such as well
+locations and discharges, aquifer thickness and hydraulic
+conductivity.  It also provides a means to check that the solution
+meets the conditions specified at the control points.  It is important
+to note that errors caused by loss of significant digits can always
+lead to a solution that is inaccurate at certain control points.
+Check gives access to data in each of the modules, all of which have
+individual check routines and relevant help screens via the <HELP>
+command.
+The following commands give access to modules:
+<REFERENCE><AQUIFER><GIVEN><WELL><LINESINK><AREL><DROOT><DOUBLET>.
+Each of the modules has a command <CONTROL> which displays the
+conditions at the control points along with the computed values.  For
+example, the command <REFERENCE> followed by the command <CONTROL>
+displays the coordinates at the reference point, the value of the head
+specified, and the value of the head computed.  The RANGE command,
+common to nearly all of the check routines, is explained here for all
+of them.  This command sets the type and range of elements to which
+all subsequent data refers.  The general form of the command is:
+<RANGE>(TYPE,NR1)[NR2]
+             TYPE signifies the type of element to be
+             considered (the types are for WELL:  GIVEN, HEAD, or
+             TIME; for LINESINK:  GIVEN or HEAD; for LINESINK
+             GIVEN or HEAD; for AREL:  GIVEN, RESISTANCE, or LEAK;
+             and for DROOT:  CRACK, CANAL, LEAKY, DRAIN, or
+             IMPERMEABLE).  The value NR1 is the starting number of
+             the element to be be considered (this number is
+             determined by the sequence in which the elements of type
+             TYPE were entered).  For example, if 10 wells are entered
+             as type=GIVEN, the command:
+               RANGE GIVEN 4,8
+             specifies that subsequent data should pertain to the
+             wells entered as 4,5,6,7, and 8.  If NR2 is omitted, the
+             default is to set NR2 equal to NR1.
+Other commands:
+
+<LAYER>      (NUMBER)
+             Sets the layer number in which subsequent information in
+             the main module of CHECK will be checked.  Unlike other
+             modules in MLAEM, a change in the layer number in check
+             will not carry over into other modules, including the
+             other levels in check.
+<CONTROL>    Displays the conditions at the control points for each
+             of the modules.  In general, the numbers in the last two
+             or three columns should be identical.  Differences in
+             these values indicate inaccuracies for a given problem.
+             Module specific information for this command is available
+             by invoking <HELP> in the appropriate module.
+<HEAD>(X,Y)[MEASURED HEAD]
+             Displays the head computed at point (X,Y).  If an
+             optional value for MEASURED HEAD is entered, the program
+             will also display the measured head and the difference
+             between the measured and computed heads.  This command is
+             useful for comparing observed and predicted heads at
+             observation points.  An input file with this command,
+             followed the X,Y location and the associated measured
+             head is recommended for model calibration.  The input
+             file is subsequently read using the command <INPUT> in
+             the module SWITCH.
+<OMEGA>(X,Y) Displays the complex potential, i.e. the value of the
+             potential and the value of the stream function, at point
+             (X,Y).
+<DISCHARGE>(X,Y)[DELTA]
+             Displays the components Qx and Qy of the discharge vector
+             (units of L^2/T) for a point (X,Y).  If the optional
+             DELTA is entered, numerical differentiations are
+             performed over an interval DELTA in the x and y
+             directions.  The numerically computed discharge
+             components are displayed below those obtained
+             analytically.
+<LEAKAGE>(<TOP>/<BOTTOM>)[MEAS.LEK.]
+             Displays the amount of leakage occuring through the upper
+             (<TOP>) or lower (<BOTTOM>) boundary of the aquifer at a
+             point (X,Y). The optional parameter MEASURED LEAKAGE will
+             enable the user to compare the two. Leakage is positive
+             upward.
+<SUMMARY>    Displays general information about all of the modules,
+             including the current and maximum numbers of specific
+             elements. Press the ENTER key after the summary of each
+             module has been displayed, in order to display the next
+             summary.
+<LOWERBOUNDARY>(X,Y)
+             Displays the lower boundary of the aquifer current layer.

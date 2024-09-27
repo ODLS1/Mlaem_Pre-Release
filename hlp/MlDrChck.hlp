@@ -1,0 +1,64 @@
+
+<LAYER>      (NUMBER)
+             Sets the layer number in which subsequent information in
+             CHECK will be checked.  Unlike other modules in MLAEM, a
+             change in the layer number in check will not carry over
+             into other modules, including the other levels in check.
+<SUMMARY>    Causes the total number of elements and the number
+             of elements of each type to be displayed.
+             The types are:
+             CRACKS
+             CANALS
+             LEAKY WALLS
+             DRAINS
+             IMPERMEABLE WALLS
+<RANGE>(<TYPE>EL 1)[EL 2]
+             Causes subsequently requested information to pertain
+             to all elements of type (TYPE) between (NUMBER 1)
+             and (NUMBER 2). TYPE is any of the words: CRACK, CANAL,
+             LEAKY, DRAIN IMPERMEABLE. If NUMBER 2 is omitted, it
+             defaults to the value of NUMBER 1.
+<ENDS>       Causes the coordinates of the endpoints of the current
+             elements to be printed.
+<CONTROL>    Causes the coordinates of the control points to be
+             printed, as well as the boundary values applied and
+             back-calculated using the computed strengths. The first
+             two columns always represent the coordinates of the control
+             points. The meaning of the third and fourth columns varies
+             with the element; the values in these columns should be
+             nearly equal and represent the following:
+For cracks:  the jump in the stream function (DPSI) across the element
+             and the discharge inside the crack multiplied by the
+             transmissivity of the crack and divided by the hydraulic
+             conductivity of the aquifer (QS).
+For canals:  the specified and computed heads (FIGIV and FI).
+For leaky walls:
+             the jump in potential (DPHI) and the normal component of
+             discharge through the wall multiplied by the resistance
+             of the wall and the hydraulic conductivity of the aquifer.
+For drains:  For drains the fourth column does not exist; the third
+             column represents the head at the control point. For each
+             drain all of these heads must be equal.
+For impermeable walls:
+             Impermeable walls as implemented in the program make use
+             of the stream function, and therefore should be used only
+             if there is no infiltration in the area of the wall. As
+             for drains, the fourth column does not exist; the third
+             column contains values of the stream function at the control
+             points. For each impermeable wall, these values must be
+             the same for all control points.
+<BVAL>       Causes the specified boundary values to be printed.
+<0VAR>       Gives the coefficients of the central polynomial used
+             for the simulation (see Groundwater Mechanics, Sec.39);
+             this command is mainly used for programming purposes.
+             The last number in the series printed out in response to
+             this command, however, represents the discharge in case
+             type is set to CANAL.  This discharge equals the total
+             amount of water removed from the aquifer by the canal.
+<PVAR>       Gives the coefficients of the Laurent Series Expansions
+             about the poles.
+<POLES>
+<LAYOUT>     Causes a layout of all double-root elements to be
+             displayed.
+<PAGE>       Clears graphics and text from the screen.
+<RETURN>     Returns control back to main menu.

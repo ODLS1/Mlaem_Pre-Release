@@ -1,0 +1,23 @@
+This routine provides access to all data pertaining to steady-state
+wells. Access to data on transient wells is currently not provided.
+To obtain information for any particular set of wells, specify the
+range and type with the command:
+<RANGE>(TYPE,NR1)[NR2]
+             where TYPE is one of the words GIVEN or HEAD.
+             For more information see the HELP in CHECK.
+Other commands are:
+<LAYER>      (NUMBER)
+             Sets the layer number in which subsequent information in
+             CHECK will be checked.  Unlike other modules in MLAEM, a
+             change in the layer number in check will not carry over
+             into other modules, including the other levels in check.
+<SUMMARY>    causes general data to be printed, such as the total
+             number of wells.
+<CONTROL>    causes all well-control points to be printed along
+             with the specified and observed heads.
+<INPUT>      causes coordinates of the well centers and radii to
+             be printed.
+<DISCHARGE>  causes all discharges of the wells to be printed.
+<LAYOUT>     Causes a layout of all wells to be displayed.
+<PAGE>       Clears graphics and text from the screen.
+<RETURN>     returns control to main CHECK menu.

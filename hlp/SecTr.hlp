@@ -1,0 +1,44 @@
+The purpose of this routine is to make sectional plots of the stream-
+lines. The upper and lower boundaries of the aquifer are automatically
+included in the plot. Upon entering the routine, the maximum and mininmum
+values encountered in the plot are displayed; the window is automatically
+set to contain the entire plot. You may overrule the window setting by
+entering the following command:
+<WINDOW>[RX1,RY1 RX2,RY2]
+            where RX1 and RX2 are the starting and end values of the
+            coordinate measured along the section (RX1 is usually 0).
+            Entering the command WINDOW without parameters will cause the
+            current values to be displayed.
+<VFAC>[FACTOR][W]
+            Entering this command will cause all vertical measures to be
+            multiplied by FACTOR. If the parameter W is entered, the window
+            will automatically be updated to accomodate the factor. If no
+            arguments are given, the current value of the factor will
+            be displayed.
+<PLOT>      Will cause plotting.
+<RETURN>    Will cause return to the main menu.
+<VIEWPORT>(FACTOR)[X1,Y1]
+            This command allows you to reduce the plots in size and to
+            move it to a new position.  FACTOR must be <=1.  The
+            values of I1 and I2 are also <=1, and represent the
+            distance as a fraction of the display width and height
+            over which the plot is to be moved right and up,
+            respectively.
+<PLOT>      This command causes a sectional plot of the streamline or
+            pathline to be plotted. This section is a vertical surface
+            through the streamline selected for the section. Once this
+            command has been given, the cursor will appear and the
+            following commands will be available.
+
+COMMANDS AVAILABLE IN CURSOR MODE.
+
+<TRACE>     Will cause a streamline in section to be produced.
+<COMMAND>   Will cause the command line to be displayed.
+<COOR>      Will cause the coodinates of the cursor to be displayed.
+            Note that these coordinates (called x,y by the program)
+            are not Cartesian coordinates. The x coordinate represents
+            the distance measured from the starting point of the
+            streamline along its horizontal projection. The y
+            coordinate represents the elevation of the point.
+<MENU>      Will cause return to the main TRACE INPUT menu.
+<RETURN>    Will cause return to the main menu.

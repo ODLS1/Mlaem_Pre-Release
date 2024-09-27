@@ -1,0 +1,105 @@
+Commands available to set the environment for subsequent cursor
+activity:
+<SWITCH>  Allows setting device for numerical OUTPUT. If OUTPUT=CON,
+          then numerical data will be printed on graphics screen
+<PLOT>    Will cause both the layout and contour plots to be
+          displayed prior to the appearance of the cursor.
+<LAYOUT>  Will cause layout to be displayed prior to appearance
+          of the cursor.
+<TOL>(TOL)
+          Sets the tolerance for subsequent MOVE commands
+          (see below) to TOL.
+<PAGE>    Clears both the text and graphics screens.
+<START>   Will cause the cursor to be displayed.
+<LAYER>   (NUMBER)
+          Sets the layer number in which subsequent information in
+          CURSOR will be displayed.  Unlike other modules in
+          MLAEM, a change in the layer number in CURSOR will not
+          carry over into other modules.
+<GRID>    Allows a new grid to be made (without going to the main menu)
+<RETURN>  Makes it possible to leave the routine without engaging
+          in any cursor activity.
+
+Once in cursor mode, enter any of the following commands.
+<LAYER>   (NUMBER)
+          Sets the layer number in which subsequent information in
+          CURSOR will be displayed.  Unlike other modules in
+          MLAEM, a change in the layer number in CURSOR will not
+          carry over into other modules.
+<HEAD>    Causes HEAD to be computed and printed.
+<POTENTIAL>[LAYER]
+          Causes both POTENTIAL and STREAM FUNCTION to be printed
+          (STREAM FUNCTION has meaning only if the infiltration rate
+          at position of cursor is zero).
+<DISCHARGE>[LAYER]
+          Causes the two components of the DISCHARGE VECTOR in the
+          layer to be printed.
+<LOWBOUN>[LAYER]
+          Causes the elevation of the lower boundary to be printed.
+<COORDINATES>
+          Prints coordinates of cursor location. A line is drawn from
+          the previous point to the current point. You may prevent
+          this line from being drawn by pressing enter twice. You
+          should do this prior to entering any other command.
+<WLL>     Records set of coordinates for lower left corner of the new
+          WINDOW.  Move the cursor to the upper right corner of the
+          window and press enter. You may abandon by entering any key
+          other than enter; the cursor will then reappear ready for
+          the next command.  The screen will be cleared and the new
+          WINDOW will be activated.
+<MENU>    Exit from graphics mode; return to main cursor menu.
+<TOLERANCE>
+          Sets the tolerance for MOVE commands, e.g., commands that
+          will allow the user to modify endpoints of line-sinks.
+          Entering this command followed by moving the cursor will
+          cause a temporary line to be drawn from the position of the
+          cursor at the time the command was given to the current
+          cursor position.  Pressing the enter key will cause the
+          tolerance to be stored as the length of the displayed line.
+          This value will be displayed on the screen.  If you press
+          ENTER without moving the cursor, the current tolerance will
+          be displayed.
+<SIZE>    Sets the
+          maximum size for the display of discharge vectors
+          to the distance between the previous cursor location and
+          the current one.
+<NDISCHARGE>
+          Makes it possible to plot the discharge normal to any given
+          line. The discharge is computed at the midpoint of the line
+          between the current cursor location and the next one, defined
+          by entering a carriage return. A rubberband line is displayed
+          if the command is entered properly. Discharge in this context
+          is the component of the discharge vector normal to the line.
+          Points and discharges up to a maximum of 50 are recorded.
+          Plotting is deferred until the command <ENDISCHARGE> is given.
+          A scale factor is then computed such that the largest vector
+          is equal to SIZE. Both tangential and normal components of
+          the discharge vector are recorded on the OUTPUT device, as
+          well as the coordinates of the points in question and the
+          scale factor. The normal component of discharge is taken
+          positive if pointing to the left with respect to an arrow
+          pointing from the first to the second point entered.
+<ENDISCHARGE>
+          Terminates the entry of points for plotting normal components
+          of discharge.
+<WLMOVE>  [DISCHARGE]
+          Makes it possible to change the locations of wells and to
+          change their discharge.  Move the cursor within a distance
+          of TOL from the well, then move the cursor to the desired
+          location and press ENTER.  If you don't move the cursor,
+          the current well attributes will be displayed.  You may
+          change the discharge of the well by entering the discharge
+          as an optional parameter.  If you move the cursor, a line
+          will appear connecting the old and new locations of the
+          well.  To facilitate updating of input files, both the old
+          and new locations of the well and the well number
+          (according to its position in the input file) are printed
+          on the OUTPUT device.  It is recommended to echo OUTPUT to
+          a file by the use of the SWITCH command.
+<MARKER>    Makes it possible to mark a point on the screen with a
+          marker; this marker is temporary and will not appear on
+          subsequent plots. The marker may be used, for example, in
+          conjunction with the DISTANCE command.
+<DISTANCE>Prints the distance from the location of the cursor when
+          <DISTANCE> is entered to the new position
+ <RETURN>  Exit from CURSOR ROUTINE.
