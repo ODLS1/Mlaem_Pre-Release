@@ -6,15 +6,35 @@ This repository contains a pre-release version of the MLAEM analytic element gro
 The draft roadmap for the development of Mlaem can be found [here](Roadmap.md).
 
 ### Download
-To download the software, choose one of two methods:
-1) (Easiest) Click on the green `<> Code` button and select `Download ZIP`. Open the zip file from your file manager and run the desired executable.
-2) (Smallest Download) Click on name of the desired files in the far left side of the file list (e.g. the `Mlaem_Win11_240716.exe` and `settings.json` files) and click on `Raw` (or the copy/download icons) to download them.
+To download the software, click on the green "<> Code" button and select "Download ZIP". Open the zip file from your file manager, extract the files, and move them to the location where you want to run Mlaem. On Windows, you may get a warning that "Windows protected your PC". Click on the tiny "More info" link on the left side of the window containing the message and then click "Run anyway". The Mlaem executable has been built entirely from source code using minimal library dependencies (all trusted, all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows and will attempt to do the same for MacOS (for MacOS, follow instructions on the web for how to work around this issue).
 
-You may get one of two warning messages from Microsoft Windows.
-1) If you downloaded the `ZIP` file, then you may get a warning that "Windows protected your PC". Click on `More info` and then click `Run anyway`.
-2) If you directly download the executable, you may get the message "Make sure that you trust...". Select the `Show More` option followd by `Keep Anyway` to download the file.
+### Installation
+Follow the steps for your operating system (Windows, MacOS, or Linux).
 
-The Mlaem executable has been built from "scratch" using minimal library dependencies (all trusted, and all source code) and should pose minimal risk. The Mlaem team will work with Microsoft to properly "certify" Mlaem as "safe" for Windows.
+#### Windows
+Run the file `Mlaem_Win11_240914.exe" by double-clicking on the file in the FileManager.
+
+#### MacOS
+Check if you have `Homebrew` installed by opening a terminal window and typing `brew --help`. If you get a list of options, then Homebrew is installed. If not, follow the Homebrew installation instructions from the web <https://brew.sh/>.
+
+When Homebrew has been successfully installed, install the `SDL2` library (which may take 30 minutes on older Macs):
+
+    brew install SDL2
+
+Next, check the type of Mac that you have by clicking on the Apple logo on the upper-left of the screen and selecting "About this Mac".
+
+If the chip type is an Apple M-series (Apple M1, M2, etc.) then run the `Mlaem_MacOS_14-6_M2_240918` file from the directory where you installed Mlaem, and the program should start (after working around the missing "developer signature" issue mentioned above).
+
+If the chip type is an Intel series, then you will need to install the compilers that were used to create Mlaem. Issue the following command:
+
+    brew install gcc@9
+
+This may take a full hour on older Macs.
+
+After the compiler has been installed, run the `Mlaem_MacOS_10-13_Intel_240915` file from the directory where you installed Mlaem, and the program should start (after working around the missing "developer signature" issue mentioned above).
+
+#### Linux
+Linux users will need to build Mlaem from source code. Please establish an account on GitHub and then submit an issue for this project (see the "Reporting Issues" section below and follow step 6, skipping the events file) to request access to the source code repository (the source code repository has detailed build instructions).
 
 ### User Tutorial
 
@@ -42,3 +62,4 @@ Please make feature requests by following step 6) in the issue creation process 
 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
+
