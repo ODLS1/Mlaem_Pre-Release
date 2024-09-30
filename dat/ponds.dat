@@ -18,6 +18,6 @@ well
     60 0 9.424778 .25
 return
 solve
-grid 50
+grid 150
 switch
   end
