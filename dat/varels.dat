@@ -124,7 +124,7 @@ varel
   8.7051620483e+001 5.0667396545e+001 12.500000 0.300000 [#27]
   return
 varel
-  layer 2
+  layer 1
   top
   polygon GIVEN_VAREL
   given const
