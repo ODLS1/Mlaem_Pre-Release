@@ -6,7 +6,7 @@ This repository contains a pre-release version of the MLAEM analytic element gro
 The draft roadmap for the development of Mlaem can be found [here](Roadmap.md).
 
 ### Download
-To download the software, click on the green "<> Code" button and select "Download ZIP". Open the zip file from your file manager, extract the files, and move them to the location where you want to run Mlaem. On Windows, you may get a warning that "Windows protected your PC". Click on the tiny "More info" link on the left side of the window containing the message and then click "Run anyway". On MacOS, you may get a warning about the developer signature, which you can safely ignore by following instructions on the web.
+To download the software, click on the green "<> Code" button and select "Download ZIP". Open the zip file from your file manager, extract the files, and move them to the location where you want to run Mlaem. On Windows, you may get a warning that "Windows protected your PC". Click on the tiny "More info" link on the left side of the window containing the message and then click "Run anyway". On MacOS, you may get a warning about the developer signature -- see the instructions below.
 
 The Mlaem executable has been built entirely from source code using minimal library dependencies (all trusted, all source code) and should pose minimal risk. The Mlaem team will work with Microsoft and Apple to properly certify Mlaem as trusted software in the future.
 
@@ -20,10 +20,10 @@ Double-click on the file `Mlaem_Win11_240930.exe" in the File Manager in the loc
 Determine your Mac processor by clicking on the Apple logo on the upper-left of your screen and selecting "About this Mac" and follow the instructions for your processor type below.
 
 ##### MacOS Apple M-Series Processor (e.g., Apple M1, M1 Pro, M2, etc.)
-Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub.
+Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub. To ignore the warning about running a file that may have Malware, go to `Settings`, `Privacy & Security` and scroll to the bottom. You should see `"Mlaem_MacOS_Apple" was blocked to protect your Mac.` Click `Open Anyway` and then `Open Anyway` again when the `Open "Mlaem_MacOS_Apple"?` window appears and use your fingerprint or password to allow the app to run. When Mlaem finally starts, allow it to access files. The app will likely quit unexpectedly the first time it runs (this may be due to the security interruptions during startup) -- ignore the message and double-click the app to finally start Mlaem.
 
 ##### MacOS Intel Processor (e.g., 2.7 GHz Intel Core i5, etc.)
-Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub.
+Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub. To ignore the "developer signature" warning, control-click on the `Mlaem_MacOS_Intel.app` file and choose Open from the shortcut menu.
 
 #### Linux
 Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). On Ubuntu Linux, the command is `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_240930`. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
