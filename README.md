@@ -11,16 +11,22 @@ To download the software, click on the green "<> Code" button and select "Downlo
 The Mlaem executable has been built entirely from source code using minimal library dependencies (all trusted, all source code) and should pose minimal risk. The Mlaem team will work with Microsoft and Apple to properly certify Mlaem as trusted software in the future.
 
 ### Installation
-Follow the steps for your operating system (Windows, MacOS, or Linux).
+Follow the steps for your operating system (Windows, MacOS, or Linux). 
 
 #### Windows
-Run the file `Mlaem_Win11_[date].exe" by double-clicking on the file in the File Manager (the Win11 executable should run on both Windows 10 and Windows 11).
+Double-click on the file `Mlaem_Win11_240930.exe" in the File Manager in the location where you extracted the ZIP file from GitHub (the Win11 executable should run on both Windows 10 and Windows 11).
 
 #### MacOS
-Open the `Terminal` app and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_MacOS_[hardware][date]`, where `[hardware]` corresponds to your Mac hardware, either "Intel" (for Intel X86 architectures) or "Apple" (for "Apple M1", "Apple M2", etc. hardware). You can determine your hardware by clicking on the Apple logo on the upper-left of your screen and selecting "About this Mac".
+Determine your Mac processor by clicking on the Apple logo on the upper-left of your screen and selecting "About this Mac" and follow the instructions for your processor type below.
+
+##### MacOS Apple M-Series Processor (e.g., Apple M1, M1 Pro, M2, etc.)
+Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folder where you extracted the ZIP file from GitHub.
+
+##### MacOS Intel Processor (e.g., 2.7 GHz Intel Core i5, etc.)
+Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you extracted your the ZIP file from GitHub.
 
 #### Linux
-Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). On Ubuntu Linux, the command is `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_[date]`. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
+Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). On Ubuntu Linux, the command is `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_240930`. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
 
 ### User Tutorial
 The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
