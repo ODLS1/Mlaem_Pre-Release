@@ -1,0 +1,4 @@
+#!/bin/zsh
+SCRIPTDIR=$(dirname $0)
+cd "`dirname $0`"
+"$SCRIPTDIR"/Mlaem_MacOS_Intel_240930

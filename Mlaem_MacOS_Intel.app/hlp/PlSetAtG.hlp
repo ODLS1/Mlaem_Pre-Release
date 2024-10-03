@@ -1,0 +1,42 @@
+All of the commands entered from this routine will affect the attributes
+only of the marked plot. This makes it possible to overlaying and
+otherwise combining marked plots on one piece of paper while giving them
+distinguishing attributes, or while individually scaling and moving
+them. If you wish to combine plots on one piece of paper, remember to
+enter the PAGE OFF command from PSET prior to generating the final plot.
+It is important to note that you have to reset manually the global plot
+attributes from PSET, followed by the command RESET, in order to
+restore the original attributes. Until that time the attributes entered
+here will remain active. You may view the combined plots as created by
+combining marked plots on the screen by entering the commands VIEW OFF
+from the main menu and PAGE OFF from PSET.  You can modify selected
+attributes again by reactivating the viewing feature, without losing
+values already set. Note that you have to enter the command READ from
+the main menu each time you wish either to view or plot.
+<LTTYPE>(CODE,TYPE)
+              Sets the thickness of curves identified by CODE to
+              TYPE (for explanation see the help file DRAWIBM.HLP,
+              displayed from the PSET module). Note that the
+              thicknesses replace the colors in screen mode.
+<LDTYPE>(CODE,TYPE)
+              Sets the line type for the curves identified by CODE to
+              TYPE.
+<PMTYPE>(CODE,TYPE)
+              Resets the polymarker type of CODE to TYPE.
+<PMHI>(CODE,TYPE)
+              Resets the polymarker height of CODE to TYPE.
+<XSHIFT>(DX)  Shifts the plot DX cm in the x direction, without
+              modifying the scale. Note that this may result in
+              producing a partial plot.
+<YSHIFT>(DY)  Shifts the plot DY cm in the y direction, without
+              modifying the scale. Note that this may result in
+              producing a partial plot.
+<REDUCTION>(FACTOR)
+              This command makes it possible to scale the plot by
+              multiplication by FACTOR. This scaling is done without
+              affecting the location of the origin of the plot on the
+              paper, and without affecting the window. Thus, part of the
+              plot might not be displayed if FACTOR is greater than 1.
+              This command is intended primarily for merging of plots.
+<HELP>        Displays this file on your screen.
+<RETURN>      Causes the next plot to be displayed.

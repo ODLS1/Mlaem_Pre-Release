@@ -1,0 +1,130 @@
+The area element module is intended for modeling regional infiltration
+and leakage in each aquifer.  Each element has four corner points, and
+provides a constant rate of infiltration.  There is no restriction to
+the size or shape of each element.  However, if variable infiltration
+is to be modeled, it should be borne in mind that the approximation of
+the distribution of infiltration will improve as the mesh of elements
+is refined.
+  At present, area elements may be used to model given infiltration
+rates, and to model leakage such as may occur through the bottoms of
+lakes and rivers and through the separating beds between aquifers.
+The leakage is modeled in an approximate fashion in case the aquifer
+is confined; the change of the conditions from unconfined to confined
+underneath the leaky bottom or leaky layer is not taken into account
+(see Groundwater Mechanics, pp 442-443).
+  It is important to note that the program does not take into account
+that the head in the aquifer may drop below the river bottom.  This
+case must be detected by the user, who then may change the leakage
+elements to elements with given rate of infiltration.
+  In each aquifer, three types of area elements are recognized:
+1. Elements of given strength (GIVEN).
+2. Elements of given resistance and given head (RESISTANCE)
+3. Elements of given resistance (LEAK)
+The difference between resistance and leaky elements is that the leaky
+elements are used to simulate leakage between aquifers, and no heads
+are specified, whereas resistance elements are used to simulate
+leakage controlled by a fixed given head above or below the boundary.
+Resistance elements are, for example, used to simulate leakage through
+river bottoms.
+  The program supports area-elements at both the upper (top) and lower
+boundaries (bottom) of each aquifer.  Leaky and resistance elements
+may overlap only if they occur at different boundaries.  (e.g.  Two
+elements of the same projection may occur at the upper and
+lower boundaries of the aquifer).
+
+  The command words are as follows:
+
+<LAYER>         (NUMBER)
+                Sets the layer number in which ALL subsequent
+                information will be entered and displayed.
+<TOP>           Causes all subsequent area elements of type RESISTANCE
+                and GIVEN to be at the top of the aquifer (this is
+                the default).
+<BOTTOM>        Causes all subsequent area elements of type RESISTANCE
+                and GIVEN to be at the bottom of the aquifer (this
+                is the default).
+<LKUP>(<ON>/<OFF>)
+                This command is used to determine whether leaky
+                elements will be placed at the top or at the bottom
+                separating layer of the aquifer (the default is LKUP
+                OFF).
+<GIVEN>
+                This command word is used to enter elements with given
+                rate of infiltration or extraction.  Note that the
+                sign convention for the rate of infiltration or
+                extraction is POSITIVE for EXTRACTION of water from
+                the aquifer (this convention is similar to that
+                generally adopted for wells, and is followed
+                throughout the program, and holds both for elements at
+                the top and at the bottom of the aquifer).  After the
+                command word, the program will prompt for coordinates,
+                and rate of infiltration as follows:
+
+(X1,Y1, X2,Y2 ,X3,Y3, X4,Y4, SIGMA)[[LABEL]]<COMMAND>
+                The coordinates should be entered clock-wise.  It does
+                not matter which point is entered first.  Subsequent
+                elements may be entered without repeating the command
+                word <GIVEN>.  Any command word, or the word COMMAND
+                will cause the program to abandon the given strength
+                element loop and display the main area element menu.
+                word COMMAND will cause the main menu for area element
+                In the event that the input line becomes too long to
+                accomodate all four coordinate pairs, you may enter
+                each coordinate pair on a separate line, and enter the
+                values of SIGMA (strength) and the optional [LABEL]
+                together on the fifth line.
+<RESISTANCE>
+                This command word is used to simulate leakage through
+                the upper or lower boundaries of the aquifer by
+                specifying the resistance of the bottom of the river
+                or lake to be modeled, followed by the head in the
+                river or lake.  The resistance is measured in time
+                units (the same units as used elsewhere, e.g., for
+                rain or hydraulic conductivity).  In much the same way
+                as for given elements, the program will prompt for
+                coordinates, resistance, and head as follows:
+
+(X1,Y1, X2,Y2, X3,Y3, X4,Y4, RESIST.,HEAD)[THICKN.][[LABEL]]<COMMAND>
+                The parameter THICKNESS is optional; it sets the
+                thickness of the river or lake bottom.  If the value
+                of THICKNESS is set for one element, this value will
+                be applied to all following elements which do not have
+                this parameter specified.  The optional command
+                [LABEL] may be entered even if THICKNESS is not
+                specified.  Alternatively, the value of thickness may
+                be set for all elements by entering the <THICKNESS>
+                command seperately.
+<LEAK>
+                This command is used to enter area elements for
+                simulating leakage between aquifers. By default, the
+                elements will be entered at the bottom of each
+                aquifer, unless the command LKUP ON is given first.
+                The program will prompt as follows:
+(X1,Y1, X2,Y2, X3,Y3, X4,Y4, RESISTANCE)[POROSITY][[LABEL]]<COMMAND>
+                A value for the POROSITY of the element may be
+                entered optionally.
+<DRAW>[<GIVEN>/<RESIS>/<LEAKY>/<ON>/<OFF>][<TOP>/<BOTTOM>/<ALL>][<ON>/
+                                                                <OFF>]
+                This command is used to control the drawing of the
+                area elements. For example, to enable the drawing of
+                resistance elements on the top of the aquifer, the
+                command is DRAW RESIS TOP ON.
+<THICKNESS>(THICK)
+                This parameter sets the thickness as used by the
+                resistance specified elements (see above).
+<POROSITY>      (n)
+                Sets the porosity for all of the following area -
+                elements.
+<RESET>         Causes all parameters in the area-sink module to
+                be reset to their default values (including those in
+                other layers).
+<RETURN>        This command is used to leave the area element module.
+
+
+  The following commands normally need not be given, but are listed for
+the sake of completeness.
+<RARFAR>(R)     Sets the distance, as a fraction of the longest side of
+                the element, at which the far-field expansion is used.
+<RARTOL>(TOL)   Sets the tolerance, used to decide at which distance
+                from the nodal points the point is assumed to be at
+                the nodal point.
