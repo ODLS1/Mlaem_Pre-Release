@@ -26,7 +26,7 @@ Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folde
 Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub. To ignore the "developer signature" warning, control-click on the `Mlaem_MacOS_Intel.app` file and choose Open from the shortcut menu.
 
 ##### MacOS Issues
-On some Macs, Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by opening a terminal window, navigating to the folder where the app is located, typing `cd Mlaem_MacOS_Apple.app` (or `cd Mlaem_MacOS_Intel.app`) and then direclty running the executable by typing `./Mlaem_MacOS_Apple_240930` (or `./Mlaem_MacOS_Intel_240930`). Once the app has been started once, double-clicking on it should work in the future.
+On some Macs, Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by opening a terminal window, navigating to the folder where the app is located, typing `cd Mlaem_MacOS_Apple.app` (or `cd Mlaem_MacOS_Intel.app`) and then directly running the executable by typing `./Mlaem_MacOS_Apple_240930` (or `./Mlaem_MacOS_Intel_240930`). Once the app has been started once, double-clicking on it should work in the future.
 
 #### Linux
 Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). On Ubuntu Linux, the command is `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_240930`. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
