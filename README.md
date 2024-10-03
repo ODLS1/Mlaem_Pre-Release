@@ -14,16 +14,16 @@ The Mlaem executable has been built entirely from source code using minimal libr
 Follow the steps for your operating system (Windows, MacOS, or Linux). 
 
 #### Windows
-Double-click on the file `Mlaem_Win11_240930.exe" in the File Manager in the location where you extracted the ZIP file from GitHub (the Win11 executable should run on both Windows 10 and Windows 11).
+Double-click on the file `Mlaem_Win11_240930.exe" in the File Manager in the location where you put the extracted ZIP files from GitHub (the Win11 executable should run on both Windows 10 and Windows 11).
 
 #### MacOS
 Determine your Mac processor by clicking on the Apple logo on the upper-left of your screen and selecting "About this Mac" and follow the instructions for your processor type below.
 
 ##### MacOS Apple M-Series Processor (e.g., Apple M1, M1 Pro, M2, etc.)
-Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folder where you extracted the ZIP file from GitHub.
+Double-click on the file `Mlaem_MacOS_Apple.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub.
 
 ##### MacOS Intel Processor (e.g., 2.7 GHz Intel Core i5, etc.)
-Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you extracted your the ZIP file from GitHub.
+Double-click on the file `Mlaem_MacOS_Intel.app` in a Finder window in the folder where you put the extracted ZIP files from GitHub.
 
 #### Linux
 Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). On Ubuntu Linux, the command is `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_240930`. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
