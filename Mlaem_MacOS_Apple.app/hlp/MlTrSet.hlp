@@ -1,0 +1,96 @@
+This routine makes it possible to set some of the variables that control
+the tracing of pathlines. The commands are listed below. If the commands
+are given without parameters, the default values are displayed by the
+program.
+<BACKWARD>(<ON>/<OFF>)
+             Enables or disables backward tracing.  Once set,
+             backward tracing will remain into effect until disabled
+             by this command.  Note that the clock will run backward
+             while backward tracing occurs.  Sectional plots will be
+             displayed from right to left, rather than from left to
+             right to remind you that the tracing is backward.
+<MARKER>[<OFF>/<TIME>/<CONC>,INTVL]
+             Activates the plotting of markers on the pathline on the
+             specified interval. If the command word given as an
+             argument is TIME, then markers will be set a distance
+             apart corresponding to the specified time interval. If
+             the command word is CONCENTRATION, then the markers will
+             correspond to concentration values that are the specified
+             interval apart.
+<WRITE>[INTERVAL]
+             Enables echoing of coordinates and elevations of points
+             on the pathlines on the output device.  The interval sets
+             the interval for echoing, measured along the pathline and
+             rounded upward to fit an integer times the current step-
+             size If the command is given without argument, the
+             writing will be disabled.
+<MAXSTEP>[DS]
+             This command sets the size of the step used in the
+             numerical procedure for tracing pathlines.  The smaller
+             the step, the more accurately the pathline is
+             determined.  The tracing routine will adapt the stepsize
+             to circumstances, such as the neighborhood of elements;
+             the stepsize actually used may thus be smaller than
+             DS.  There is a default, set at a fraction of the
+             current window.  You may have this default displayed by
+             entering the command without parameters.  The maximum
+             stepsize is updated if you change the window; if you
+             reduce the window to make a detail of the flow pattern,
+             the steps will automatically be reduced accordingly.
+             There are two other measures used by the tracing module:
+             the minimum stepsize, and the accuracy.  Since the
+             minimum stepsize must always be less than the maximum
+             one, and the accuracy, in turn, must be less than the
+             minumum step, the program automatically adjusts these
+             values whenever you enter MAXSTEP.  You may, however,
+             overrule these values.
+<MINSTEP>[DS]
+             Sets the minimum value to which the stepsize can be
+             reduced by the program.  Such reductions in stepsize are
+             necessary when the desired accuracy cannot be obtained
+             with the current stepsize, and when the pathline is
+             close to an element.  Note that the minimum stepsize
+             must be less than maximum stepsize (above).  The minimum
+             stepsize is updated if the window is changed.
+<SIZEMARK>[SIZE]
+             Sets the size of the markers to SIZE.
+<RETURN>     Will result in return to the TRACE INPUT menu.
+
+The commands listed below generally need not be given. They set the various
+parameters that control the tracing algorithm.
+<ACCURACY>[EPS]
+             Sets the tolerance for determining whether sufficient
+             accuracy has been reached (if changes in consecutively
+             computed points are less than this tolerance,
+             iteration is abandoned). Note that EPSILON must be less
+             than MINIMUM STEPSIZE. The accuracy is updated
+             automatically whenever you change the window.
+<NITMAX>[MAX]
+             Sets the maximum number of iterations for finding a point of
+             the pathline with the specified accuracy.
+<REDUCE>[FACTOR]
+             If the desired accuracy is not achieved during the Runge-Kutta
+             iterative procedure the step size is decreased repeatedly by
+             multiplication by FACTOR until the desired accuracy is
+             obtained
+<DECREASE>[FACTOR]
+             As elements are being approached, the stepsize is gradually
+             reduced by multiplication of the stepsize by the factor specified
+             by this command in order to reduce the chance of overshooting
+             the element.
+<INCREASE>[FACTOR]
+             As the tracing proceeds away from the elements, the stepsize
+             is gradually increased by multiplication by FACTOR.
+<NEIGHBORHOOD>(DELTA)
+             The neighborhood defines an area away from an element that is
+             considered to be part of the element as far as the pathline
+             tracing routine is concerned.
+<OFFSET>[OFFSET]
+             The offset sets the distance away from an element where
+             pathlines emanating from the element will be started. The
+             value of OFFSET must be larger than the value of DELTA
+             specified in the command NEIGHBORHOOD.
+             The varous steps must fulfill the condition:
+             ACCURACY < MINIMUM STEP < MAXIMUM STEP. If this condition
+             is not met upon leaving the routine, you will be warned;
+             the program will request that you remedy the situation.

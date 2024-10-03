@@ -1,0 +1,281 @@
+The area element module is intended for modeling infiltration and
+leakage, either through lake and river bottoms, or through the
+separating beds between aquifers.  Each element is bounded by a
+polygon.  The coordinates of the corner points of the polygons may be
+entered either via the GUI, or by entering the data in the polygon
+module, accessed via the command word polygon.  The polygon is
+identified by its key (name), which is entered by the user and may be
+up to 32 characters long.  The rate of infiltration may be either
+constant, or be modeled by an interpolator that fits the values
+provided by the user at fixed locations inside the polygon.  There is
+no restriction to the size or shape of each element, but numerical
+inaccuracies may lead to problems if some of the sides of the polygon
+become extremely long; if such problems arize, divide the side up into
+a few shorter ones.  Area elements, called VARELS here, may be used to
+model given infiltration rates, and to model leakage such as may occur
+through the bottoms of lakes and rivers and through the separating
+beds between aquifers.
+
+The functions associated with the VARELS may be either exact or
+approximate. Since the approximate functions are much faster than
+the exact ones, and require much less storage, it is recommended
+to use the approximate solution (the default). The exact solution
+may be used by entering the command word
+EXACT
+while the command word
+APPROXIMATE
+will restore the default.
+
+It is important to note that the program does not take into account
+that the head in the aquifer may drop below the river bottom.  This
+case must be detected by the user, who then may change the leakage
+elements to elements with given rate of infiltration.  Four types of
+area elements are recognized:
+1. Elements of given strength (GIVEN).
+2. Elements of given resistance and given head (RESISTANCE)
+3. Elements of multi-resistance and given heads
+3. Elements of given resistance (LEAK)
+The difference between resistance and leaky elements is that the leaky
+elements are used to simulate leakage between aquifers, and no heads
+are specified, whereas resistance elements are used to simulate
+leakage controlled by a fixed given head above or below the boundary.
+Resistance elements are, for example, used to simulate leakage through
+river bottoms.
+The program supports area-elements at both the upper (top) and lower
+boundaries (bottom) of each aquifer.  Leaky and resistance elements
+may overlap only if they occur at different boundaries.  (e.g.  Two
+elements of the same projection may occur at the upper and lower
+boundaries of the aquifer).  The procedure for entering the data for
+the elements is as follows:  1.  Enter a polygon key by means of the
+command word:
+
+POLYGON AKEY
+
+where AKEY is the key that you have entered when entering the
+coordinates of the corner points of the polygon.  Note that the first
+character in AKEY must not be a letter (e.g., a / or a #).
+2. Enter the data points
+where boundary conditions are to be met exactly (collocation points).
+These points are the bases of the radial basis interpolator used by
+the program to define the leakage inside the polygon.  NOTE THAT ALL
+BASIS POINTS THAT BELONG TO A SINGLE AREA SINK MUST BE ENTERED
+DIRECTLY FOLLOWING THE COMMAND
+
+POLYGON AKEY
+
+If only a few (e.g., one) basis points are to be associated with a
+single polygon, then it may be more advantageous to let each basis
+point be followed by the polygon key akey (shown between the brackets
+in the command list below).  To enter this input mode, let the keyword
+GIVEN, RESIS, MULTI, OR LEAK be followed by the optional command word
+poly.  Polygons with constant strength and type GIVEN do not have a
+collocation point associated with them, and are entered after the
+command sequence GIVEN CONSTANT has been entered.
+3.  Associate each basis point with boundary values.  For the VARELS
+of type GIVEN and MULTI-RESISTANCE these values are entered on the
+line that contains the coordinates of the basis point.  For the VARELS
+of type RESISTANCE and MULTI-RESISTANCE, the preferred way is to enter
+the boundary values separately via the aquitard module, called ATARD
+here.
+
+The data entry of the 4 types of VAREL is as follows:
+a) GIVEN
+<GIVEN>[<POLYGON>/<CONSTANT>[POLYGON]]
+where POLYGON indicates that the polygon key will be entered along
+with the coordinates of the basis point, and where the second key word
+CONSTANT (optionally followed by the command word POLYGON) indicates
+that the element is of type GIVEN CONSTANT.
+The program will prompt as follows, depending on the optional parameters.
+
+For GIVEN:
+(X,Y,DISCHARGE/UNIT AREA)[[LABEL]]<COMMAND>
+/KEY,X,Y,DISCHARGE/UNIT AREA)[[LABEL]]<COMMAND>
+where X and Y are the coordinates of the basis point and DISCHARGE/UNIT AREA
+is the discharge per unit area of the area-sink. NOTE THAT THE DISCHARGE IS
+POSITIVE FOR EXTRACTION.
+Coordinates are not required for VARELS of type given constant:
+(DISCHARGE/UNIT AREA)[[LABEL]]<COMMAND>
+(/KEY DISCHARGE/UNIT AREA)[[LABEL]]<COMMAND>
+The command word COMMAND in all cases will return control to the main command
+line in the VAREL module.
+
+For MULTI-RESISTANCE:
+(X,Y,RES1,RES2,SEP HEAD,HEAD1,HEAD2)[THICK][[LABEL]]<COMMAND>
+/KEY X,Y,RES1,RES2,SEP HEAD,HEAD1,HEAD2)[THICK][[LABEL]]<COMMAND>
+The resistivity values RES1 and RES2 are associated with the heads
+HEAD1 and HEAD2, respectively.  When the head in the aquifer is below
+SEP HEAD, then the combination RES1 and HEAD1 is used, whereas when
+the head in the aquifer is above SEP HEAD, then the combination RES2
+and HEAD2 is used.  This feature may be used when the behavior of a
+stream changes as the level in the aquifer drops below a certain
+value.  The effect of a stream drying up may be simulated in this way
+by making the value of RES1 extremely high.
+
+The parameters for the following types, RESISTANCE and LEAKY may all
+be entered either on the command line, or be taken from the
+interpolated values based on the data entered via the ATARD module.
+If an ATARD polygon has been defined, then the program will use
+interpolated values, unless the user has entered the values on the
+command line.  Note that the porosity is not entered via the ATARD
+module; if a porosity value is not entered, then the default value
+specified for the separating bed will be used.
+
+For RESISTANCE:
+(X,Y)[RESISTIVITY,HEAD][THICKNESS][[LABEL]]<COMMAND>
+(/KEY X,Y)[RESISTIVITY,HEAD][THICKNESS][[LABEL]]<COMMAND>
+The resistivity is in units of time, and is equal to the thickness of
+the river or lake bed divided by its hydraulic conductivity, all in
+units consistent with those of other parameters entered in the
+program.  the parameter thickness is optional and equals the thickness
+of the river bottom; this parameter is not used at present.
+
+For MULTI-RESISTANCE:
+(X,Y,RES1,RES2,SEP HEAD,HEAD1,HEAD2)[THICK][[LABEL]]<COMMAND>
+/KEY X,Y,RES1,RES2,SEP HEAD,HEAD1,HEAD2)[THICK][[LABEL]]<COMMAND>
+The resistivity values RES1 and RES2 are associated with the heads
+HEAD1 and HEAD2, respectively.  When the head in the aquifer is below
+SEP HEAD, then the combination RES1 and HEAD1 is used, whereas when
+the head in the aquifer is above SEP HEAD, then the combination RES2
+and HEAD2 is used.  This feature may be used when the behavior of a
+stream changes as the level in the aquifer drops below a certain
+value.  The effect of a stream drying up may be simulated in this way
+by making the value of RES1 extremely high.
+
+For LEAKY:
+(X,Y)[RESISTIVITY,POROSITY/POROSITY][[LABEL]]<COMMAND>
+(/KEY X,Y)[RESISTIVITY,POROSITY/POROSITY][[LABEL]]<COMMAND>
+The porosity is an optional parameter that is used to set the porosity
+of the leaky layer, which is used to compute the travel times of
+particles that move through the leaky layer.
+
+OVER-SPECIFICATION
+Your version of the program may support over-specificaton as
+introduced by Iankovic and Barnes.
+******
+REference!!!
+*****
+The program distinguishes between BASIS POINTS and CONTROL POINTS.
+The former points serve as the bases for the multi-quadric
+interpolator; the latter points are the points where the conditions
+are specified.  The program will match the conditions in an
+approximate sense such that the sum of the squares of the errors at
+the control points and the basis points is minimized.  The input of
+basis points is identical to that presented above.  The control points
+that are not basis points are entered as usual, except that the
+command word
+EXTRA
+is entered prior to entering the coordinates and boundary values
+for the points.
+
+PARAMETER ESTIMATION
+Somve versions of the program support parameter estimation for the
+VARELS. Parameter estimation is enabled by entering the command word
+PAREST ON
+The program will attempt to compute the resistivities at the basis
+points, using the over-specification points;  the coordinates of
+these points follow the command word
+EXTRA
+which is to be entered directly
+behind the coordinates of the last basis point.
+Head data are used at the over-specification points for the
+estimation of the resistivities at the basis points. These heads may
+be entered directly following the coordinates of the
+over-specification points, but on the same line.
+The preferred method for the entering of head data, either estimated
+or measured, is via the AQUIFER module, using the command MHEAD.
+(see the help file MLAQIN.HLP, accessible from within MLAEM via the
+module AQUIFER.) The head values entered via MHEAD in any aquifer
+bounded above or below by the leaky layer with resistivity to be
+determined are interpolated by MLAEM using the multi-quadric
+interpolator. The program will use these interpolated values at all
+control points (note that the basis points are not control points for
+the purpose of parameter estimation) as boundary values for the
+determination of the unknown resistivities.
+Once the problem has been solved with parameter estimation active, the
+computed resistivities may be entered automatically into the aquitard
+module and written to file using the command
+PUTAT
+The program will prompt you for a filename.
+The aquitard data (resistivities) generated by the program and written
+to a file may be read in later and considered as known values.
+The parameter estimation utility is switched off using the command
+PAREST OFF
+
+Other command words available via the command-line interface are as follows:
+
+<LAYER>         (NUMBER)
+                Sets the layer number in which ALL subsequent
+                information will be entered and displayed.
+<TOP>           Causes all subsequent area elements of type RESISTANCE
+                and GIVEN to be at the top of the aquifer (this is
+                the default).
+<BOTTOM>        Causes all subsequent area elements of type RESISTANCE
+                and GIVEN to be at the bottom of the aquifer (this
+                is the default).
+<LKUP>(<ON>/<OFF>)
+                This command is used to determine whether leaky
+                elements will be placed at the top or at the bottom
+                separating layer of the aquifer (the default is LKUP
+                OFF).
+<THICKNESS>(H)  Sets the default thickness to be used by all VARELS to H.
+<POROSITY>(n)   Sets the default porosity to te used by all VARELS to n.
+<POLYGON>(/KEY) Sets the polygon for subsequent VAREL entry to /KEY.
+<DRAW>[<GIVEN>/<RESIS>/<LEAKY>/<ON>/<OFF>][<TOP>/<BOTTOM>/<ALL>][<ON>/
+                                                                <OFF>]
+                This command is used to control the drawing of the
+                area elements. For example, to enable the drawing of
+                resistance elements on the top of the aquifer, the
+                command is DRAW RESIS TOP ON.
+<RESET>         Causes all parameters in the area-sink module to
+                be reset to their default values (including those in
+                other layers).
+<RETURN>        This command is used to leave the area element module.
+<HELP>          Displays this file.
+The following commands normally need not be given, but are listed for
+the sake of completeness.  Understanding their meaning requires
+specialized knowledge.  The term dimensionless distance used in what
+follows is the distance measured in terms of the number of times it
+equals half the length of the polygon side in question.
+The commands marked with a * apply to the exact solution only.
+<ROOT>(Y1,Y2)*  Sets the range of values for the dimensionless
+                distance
+                between polygon sides and basis points for which a
+                faster formulation can be used; for values outside
+                this range numerical inaccuracies require that a
+                better, but slower, formulation be used.  The default
+                values are Y1=1, Y2=5.  Setting these two numbers both
+                equal to a very large value will force the best
+                solution to be used always.
+<FAR>(R)        Sets the dimensionless distance from the center of each
+                side, beyond which the far-field expansion is used.
+                The default value is 1.2.
+<ZMFAR>(R)*     Sets the dimensionless distance between a basis point
+                and each side beyond which a much faster approximation
+                can be used.  The default for this distance is 1.2.
+<CFAR>(NDIST)*  Sets the dimensionless distance from the center of each
+                side, beyond which the far-field expansion is used for
+                the constant term in the leakage interpolator.  The
+                default value is 2.0
+<FTERMS>(N)     Sets the number of terms in the far-field expansion to N; the
+                default is 40.
+<FCTERMS>(N)*   Sets the number of terms in the far-field expansion for
+                the constant term in the leakage interpolator to N; the
+                default is 40.
+<DMLTOL>(R)*    Sets the tolerance to R. The default is 1e-5.
+<TERMSLI2S>(N)* Sets the number of terms in the series expansion for the
+                Dilogarithm to N.  The default is 500.  Note that the
+                program uses this default as a maximum; the actual
+                number of terms varies with position.  A lower value
+                for this parameter will speed up the solution, but may
+                result in inaccuracies, visible as anomalies in the
+                contour lines.
+<FZMTERMS>(N)*  Sets the number of terms used in the Taylor series for the
+                approximation controlled by the value of ZMFAR.  The
+                default is 40.
+<FIXFAR>(<ON>/<OFF>)
+                Setting this option on forces the program to use a
+                fixed number of terms in the far-field, rather than
+                let the number of terms depend on distance.
+<NODETOL>[TOL]  Sets the dimensionless tolerance for node to TOL. When a
+                point is within this distance from a node, then the
+                point is assumed to be on the node.

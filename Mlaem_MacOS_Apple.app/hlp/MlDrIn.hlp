@@ -1,0 +1,110 @@
+  This module supports the modeling of thin isolated features:
+canals, drains, cracks, leaky walls, and impermeable walls. The
+elements are specifically designed to model isolated features; they
+should never be strung together, nor should they coincide with other
+elements.
+  The elements have certain degrees of freedom, allowing for the
+boundary conditions to be applied at a user-defined number of control
+points on the elements.  The degrees of freedom are obtained by the
+coefficients of a polynomial, referred to as the central polynomial,
+and the coefficients of Laurent series expansions of a user-defined
+number of poles, uniformly distributed around the element.
+  The maximum number of degrees of freedom using the central polynomial
+only is 9. If more than 9 control points are desired, the user must
+specify expansions about poles. The first two poles each add one
+degree of freedom; subsequent poles each add 2 degrees of freedom.
+Thus, np poles represent 2(np-1) degrees of freedom. If poles are to
+be used, their number must be at least 2.
+  The user may, for each element, specify the number of control points
+as well as the number of poles; the remaining number of degrees of
+freedom are then taken up automatically by the central polynomial.
+In case of error (e.g., too many poles for the number of constraint
+points or vice versa), the program provides a warning.
+  Elements are entered by using command words as follows:
+
+<LAYER>        (NUMBER)
+               Sets the layer number in which ALL subsequent
+               information will be entered and displayed.
+<CANAL>        will cause the program to expect two coordinate pairs
+               per element, followed by a head, and, optionally, the
+               number of control points (the number of poles defaults
+               to zero, but may be overridden by the command <POLES>,
+               see below). The program prompts for the expected input;
+               lines of coordinate pairs and heads may be entered
+               repeatedly. The user may break out of this loop by
+               entering any of the commands recognized in the DROOT
+               module, or by typing COMMAND which will bring back the
+               the command line for droot. The program prompt is:
+(X1,Y1 X2,Y2,HEAD)[NR CONTRL PTS][[LABEL]]<COMMAND>
+<DRAIN>        This command works in the same way as <CANAL> except
+               that a value for the head is not provided; the head
+               is forced to be constant along the drain, but a specific
+               value is not maintained. Thus, the difference between
+               a canal and a drain is that the canal can take water out
+               of the aquifer, whereas a drain cannot. The program
+               prompt is:
+(X1,Y1 X2,Y2)[NR CONTRL PTS][[LABEL]]<COMMAND>
+<CRACK>        is similar to drain, except that the element has a
+               certain transmissivity (a drain may be viewed as a
+               crack of infinite transmissivity. The transmissivity
+               of the crack is defined as the product of its hydraulic
+               conductivity and its width. The user should input on
+               a single command line the two coordinate pairs of the
+               endpoints of the crack, followed by its transmissivity,
+               its width ,and, optionally, the number of control points.
+               The program prompt is:
+(X1,Y1 X2,Y2,TRANSM.(=K*WIDTH),WIDTH,POR.)[NR CONT.PTS][[LABEL]]<COMMAND>
+<LEAK>         specifies a leaky wall. Enter the two coordinate pairs,
+               followed by the resistance (thickness divided by
+               hydraulic conductivity), the thickness of the wall
+               and, optionally, the number of control points. The program
+               prompt is:
+(X1,Y1 X2,Y2,RESIST.(=WIDTH/K),WIDTH,POR.)[NR CONT. PTS][[LABEL]]<COMMAND>
+<IMPERM>       specifies an impermeable wall. The program prompt is:
+(X1,Y1 X2,Y2)[NR CONTRL PTS][[LABEL]]<COMMAND>
+
+The number of control points entered as the final paramater in the above
+commands overrules the number of control points only for that element.
+The default value is set by the command CONTROL, see below.
+
+An optional label may be entered between brackets, as shown in the
+prompt.
+
+Issuing the command word COMMAND in response to the program prompt for
+element data causes the main droot-input menu to be displayed.
+
+Additional commands.
+<POLES>(NR,ORDER)
+               Sets the number of poles to NR and the order to ORDER.
+               This accounts for 2*ORDER*(NR-1) degrees of freedom;
+               the number of control points must thus be >
+               2*ORDER*(NR-1).
+<PDRAW>        Draws the poles.
+<CONTROL>(NR OF CONTROL PTS)
+               Sets the default number of control points to nc. Note
+               that this number may be overridden for individual
+               elements by entering [nc] as the last number of the
+               list of parameters.
+<TOLERANCE>(RTOL)
+               Sets the distance (as a fraction of the element
+               length) between the element tip and the control points
+               controlling the behavior at the tip.  The default for
+               this distance is .001*L where L is the length of the
+               element.
+<RESET>        Causes all parameters in the double-root module to be
+               reset to their default values (including those in other
+               layers).
+<RETURN>       Returns control to the main menu.
+
+
+               The following commands control the behavior of the
+               solution, and should be used only with a thorough
+               understanding of the double-root elements.
+<RADIUS>(R)    Sets the radius of the circle that comprises the
+               element in the transformed domain. Under certain
+               circumstances, the value of RADIUS may affect
+               numerical accuracy. The default is 2.
+<DELTA>(DIST. OF POLE FROM ELMT, AS A FRACTION OF ELMT LENGTH)
+               Sets the distance of the poles from the boundary in
+               the transformed domain as a fraction of RADIUS.
+               The default is 0.5.

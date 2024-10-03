@@ -1,0 +1,32 @@
+The program currently supports two types of wells: wells with given
+discharge, and wells with the head specified at the well boundary.
+Wells are entered by the use of the following commands:
+<LAYER>  (NUMBER)
+         Sets the layer number in which ALL subsequent information
+         will be entered and displayed.
+<GIVEN>  This command word causes the program to expect entries of
+         wells of given discharge, and will prompt the user for
+         well coordinates and discharge as follows:
+(XW,YW,Q)[RADIUS][[label]]<COMMAND>
+         where XW,YW represent the x and y coordinates of the center
+         of the well, and Q the discharge. RAD is the radius of the
+         well and is optional. The radius has a default value of
+         .001 in absolute units. The value of RADIUS is used in the
+         pathline tracing routine and in the contouring routine.
+         The program will expect continued entry of such lines of
+         data, until a command word is entered.
+         An optional label may be entered between brackets. You can
+         return to the WELL INPUT menu by entering the command COMMAND.
+<HEAD>   This command word works very much the same way as <GIVEN>,
+         except that now entry of the radius is required rather than
+         optional; after the entry of the command word, the program
+         prompts with:
+(XW,YW,HEAD,RADIUS)[[label]]<COMMAND>
+<FACTOR> (NUMERICAL VALUE)
+         allows for specifying a factor by which each discharge value
+         as typed in is to be multiplied to convert it to the consistent
+         units used in the program, e.g. to convert from GPM to
+         cubic feet/min.
+<RESET>  Will cause all parameters in the module WELL to be reset to their
+         default values (including WELL modules in other layers).
+<RETURN> Returns control to main menu.

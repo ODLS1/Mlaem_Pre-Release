@@ -1,0 +1,23 @@
+return
+window -40 -50 80 50
+fitwindow
+aquifer
+  thick 100
+  base 0
+return
+given
+  uniflow .1
+  pond
+    0 0 10 -.03
+return
+reference
+  100 0 10
+return
+well
+  given
+    60 0 9.424778 .25
+return
+solve
+grid 150
+switch
+  end

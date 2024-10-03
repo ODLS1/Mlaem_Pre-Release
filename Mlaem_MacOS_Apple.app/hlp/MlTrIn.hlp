@@ -1,0 +1,188 @@
+PART ONE: COMMANDS REQUIRING THE MOUSE.
+
+Move the cursor to the desired position and enter any one of the
+commands listed below.  Use of the cursor may be replaced by entering
+coordinates manually, while retaining the graphics capabilities of the
+TRACE module.  This is done by entering the command CURSOR OFF from
+the main TRACE INPUT menu.  In this case, enter manually a pair of
+coordinates before giving the appropriate command.  Any of the
+commands listed below may be executed repeatedly.  This is done as
+follows.  Position the cursor at the desired location, then enter the
+command window, then enter any of the command words listed below,
+except for SECTION, then move cursor to the next position and press
+the right mouse button.  The value corresponding to the cursor
+position will appear in the command window, or elsewhere if output is
+re-directed or echoed.
+
+Commands available:
+
+<HEAD>        Causes HEAD to be computed and printed.
+<BASE>        Causes base elevation to be printed.
+<SURFACE>     Causes aquifer upper boundary elevation to be printed.
+              unconfined flow, this boundary is the phreatic surface
+              elevation; for confined flow it is the elevation of the
+              confining layer.
+<POTENTIAL>   Causes the coordinates and the values of both the
+              potential and the stream function to be displayed.
+<DISCHARGE>   Causes the two components of the DISCHARGE VECTOR in the
+              layer to be printed.
+<COOR>        Prints coordinates of cursor location (this position is also
+              recorded in the coordinate window)
+<NDISCHARGE>[ACCURACY, MAX NR OF INTERVALS]
+              Makes it possible to compute the discharge normal to any
+              given line.  The discharge is computed by numerical
+              integration (trapezoidal rule) along a straight line
+              between the previous cursor location and the current
+              one.  The number of intervals and the accuracy may be
+              entered as optional parameters by the user.  The normal
+              component of discharge is taken positive if pointing to
+              the left with respect to an arrow pointing from the
+              first to the second point entered.  The discharge, as
+              well as the cumulative discharge is computed until the
+              command ENDDISCHARGE is given.
+<LEAK>        Computes and displays the leakage computed at the
+              current boundary and layer.
+<ENDISCHARGE>
+              Terminates the entry of points for plotting normal
+              components of discharge.
+<TRACE>[ELEV] Starts tracing of pathline, beginning at cursor
+              location at elevation [ELEV]. If ELEV is omitted, the
+              pathline starts at either aquifer top or phreatic
+              surface.
+<MENU>        Terminates cursor activity while remaining in the module.
+<SECTION>     This command may be used to generate a sectional plot of
+              pathlines.  To generate the plot, you must move the cursor to
+              any point of a pathline and then enter the command.  This
+              command will work only if the pathline is recorded on a
+              file.  This will always be the case if you have read the
+              pathline in from a file, and will nearly always be the case
+              if you construct the pathline, since it is recorded on
+              SLDFLT.PTH.  However, this file will be closed as a result of
+              certain sequences of commands leading to errors.  Should this
+              occur, the program will generate the appropriate message.
+              You should then read the pathline in again by entering the
+              command READ, specifying SLDFLT.GRD.  This will cause the
+              recording file to be opened again (under certain conditions,
+              it may be advisable to leave TRACE and re-enter.
+<TOL>         Sets the tolerance, used by the program to determine
+              whether or not the cursor is on a streamline being
+              chosen for a sectional plot.  Entering this command
+              followed by moving the cursor will cause a temporary
+              line to be drawn from the position of the cursor at the
+              time the command was given to the current cursor
+              position.  Pressing the enter key will cause the
+              tolerance to be stored as the length of the displayed
+              line.  This value will be displayed on the screen.  If
+              you press ENTER without moving the cursor, the current
+              tolerance will be displayed.  Note that the value set
+              for the tolerance using the cursor is temporary; it is
+              valid only while in cursor mode.  To re-set the
+              tolerance permanently, enter the value after issuing the
+              command MENU.
+<CLEAR>       Clears all the lines drawn on the screen by the TRACE module.
+<COMMAND>     Causes the command line to be displayed on the screen.
+<RETURN>      Returns control to main menu.
+
+BACKWARD TRACING
+              Backward tracing is supported, and is enabled by
+              entering the appropriate command from the SET FACTORS
+              routine, entered by typing the word SET from the main
+              TRACE INPUT menu.
+
+PART TWO.
+
+
+Commands available to set the environment for subsequent cursor
+entry of starting points for paths (these commands are available only
+after entering the command RESULTS or TRACE from the main command line:
+
+<LAYER>       (NUMBER) Sets the layer number in which subsequent
+              information in CURSOR will be displayed.  Unlike other
+              modules in MLAEM, a change in the layer number in
+              CURSOR will not carry over into other modules.
+<SWITCH>      Provides access to the routine for re-directing I/O.
+              Allows setting device for numerical output.  If
+              OUTPUT=CON, then numerical data will be printed on
+              graphics screen.
+<SET>         Provides access to the routine for setting tracing
+              parameters.
+<LAYOUT>      Will cause layout to be displayed prior to the
+              appearance of the cursor.
+<TIME>[TIME]  Will set the time, given in user units, to TIME.
+              Entering the command without argument will cause the
+              current time to be displayed both in user and program
+              units.  Note that TIME must be positive.
+<START>       Will cause the cursor to be displayed.
+<PLOT>        Will cause both the layout and contour plots to be
+              displayed prior to the appearance of the cursor.
+<CURSOR>(<ON>/<OFF>)
+              When entering the portion of the program for inputting
+              starting points of pathlines with CURSOR ON, coordinates
+              will be entered using the cursor.  If the CURSOR is OFF,
+              coordinates must be entered by typing in values.  These
+              values must then precede the command word.  You would
+              set CURSOR OFF, for example, if it is desired to produce
+              the graphical output on the plotter (specified by
+              entering the commands:  PSET and PLOTTER).  This
+              facility also makes it possible to start pathlines at
+              points with specified coordinates, either typed in or
+              read from a file, using the SWITCH facility.
+<TRANSPORT>   Provides acces to the routine for inputting parameters for
+              contaminant transport.
+<WINDOW>      (RX1,RY1,RX2,RY2)
+              Sets the window. Note that this window command will be
+              in effect only inside the tracing routine; the window
+              will be reset to the original value upon leaving the
+              tracing routine. Note that this is not true for the
+              window set with the aid of the cursor.
+<TOL>[TOLERANCE]
+              Sets the tolerance, used by the program to determine
+              whether or not the cursor is on a streamline being
+              chosen for a sectional plot. Entering the command without
+              argument will cause the current value to be displayed.
+              The default value is automatically scaled to the current
+              window.
+<SSAVE>       Will save subsequent sectional plots of pathlines on a file.
+              The program will prompt for the filename.
+<SREAD>       [VFAC]
+              Will read a sectional plot of pathlines.  A plan view of
+              the pathline will be produced when you enter either one
+              of the commands PLOT or LAYOUT.  The program will wait
+              until you press the enter key, and will then produce the
+              sectional plot of the pathline.  The optional parameter
+              VFAC may be entered in order to multiply all vertical
+              distances as saved previously on the file by a constant
+              factor.  This factor is applied temporarily and does not
+              replace the factor that you may have entered when saving
+              the section.
+<SAVE>        Will save a plan view of pathlines on a file. The program
+              will prompt for a filename.  If this command is not
+              given, then, upon entering the routine TRACE, any plot
+              of pathlines produced will be saved on a file with the
+              name SLDFLT.PTH.  Because the tracing routine uses the
+              same memory locations as those reserved for storing
+              grids, the current grid will be saved upon entering
+              trace under the filenam SLDFLT.GRD.
+<READ>        Will read a plan view of pathlines and produce the plot
+              when either the command PLOT or the command LAYOUT is
+              entered.  The program prompts for a filename (which may
+              be SLDFLT.PTH)
+++++++++++++++++++++++++++++CAUTION:  ENTERING THE WRONG FILENAME AFTER
+              THE COMMANDS SAVE OR SSAVE WILL LOCK UP THE MACHINE,
+              NECESSITATING A POWER-DOWN.  (This will occur, for
+              example, if the program attempts to read a sectional
+              file for a plan view plot, or a grid file for either
+              kind of pathline plot.  To help avoid this, it is
+              suggested that the files be given easily distinguishable
+              extensions, such as GRD, PTH, and
+              PTV.++++++++++++++++++++++++++++++++++++++
+<PSET>        Provides access to the routine for setting plot options.
+<VIEWPORT>(FACTOR)[X1,Y1]
+              This command allows you to reduce the plots in size and
+              to move it to a new position.  FACTOR must be <=1.  The
+              values of I1 and I2 are also <=1, and represent the
+              distance as a fraction of the display width and height
+              over which the plot is to be moved right and up,
+              respectively.
+<RETURN>      Makes it possible to leave the routine without engaging
+              in any cursur activity.
