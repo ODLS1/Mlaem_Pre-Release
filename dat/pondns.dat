@@ -5,7 +5,7 @@ aquifer
 ret
 given
   pond
-    0 0 10 -.03
+  0 0 10 -.01
   uni .1
 ret
 ref
@@ -14,7 +14,7 @@ ret
 win -40 -50 80 50
 well
   given
-    60 0 9.424778 .25
+  60 0 9.424778 .25
 ret
 solve
 grid 150
