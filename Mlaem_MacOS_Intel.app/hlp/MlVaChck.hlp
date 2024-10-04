@@ -1,8 +1,0 @@
-HELP FILE FOR DATA RETRIEVAL OF VARIABLE-STRENGTH AREA-ELEMENTS.
-(filename: MLVACHCK.HLP)
-
-Purpose: To retrieve data from the variable-strength area-element
-module. Commands:
-SUMMARY:
-Causes a summary to be displayed of the maximum number of
-Variable-strength Area ELements (VARELS) and associated parameters.
