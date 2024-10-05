@@ -48,7 +48,7 @@ Due to its pre-release nature, users are likely to encounter issues when using t
 6) When you have confirmed duplication of the issue with the events file, create a new Issue on the GitHub `Mlaem_Pre-Release` site:
     - [ ] Click on the `Issues` tab on the upper-left and then on the green `New issue` button
     - [ ] Describe the problem you encounted
-    - [ ] Provide the name of the executable you used (e.g. `Mlaem_Win11_240930.exe`)
+    - [ ] Provide the name of the executable you used (e.g. `Mlaem_Win11.exe`)
     - [ ] Attach the `issue_events.txt` file you created to the new issue
     - [ ] Click the green `Submit new issue` button to create the issue.
 
