@@ -59,3 +59,15 @@ Please make feature requests by following step 6) in the issue creation process 
 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
+
+### Zoom Meeting
+
+Erik Strack is inviting you to a scheduled Zoom meeting.
+
+Topic: Erik Strack's Personal Meeting Room
+
+Join Zoom Meeting
+https://us05web.zoom.us/j/7258272316?pwd=NVBqSUJIVExoRnBUeFdoclYvbGhsQT09
+
+Meeting ID: 725 827 2316
+Passcode: Z74My4
