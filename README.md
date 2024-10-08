@@ -60,12 +60,16 @@ Please make feature requests by following step 6) in the issue creation process 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
 
-### -------------------------------------- Release Notes --------------------------------------
+#### ----------------------------------------------- Release Notes -----------------------------------------------
 
-#### Version 6.A1 (Alpha 1)
-1) Fixed crash and issues with trace module. Mlaem should now always be in Trace when the Results tools are used.
-2) Created a setting under the Settings->Wells menu that can be selected to only allow entry of one well at a time
+##### Version 6.A1 (Alpha 1, October 8, 2024)
+* Fixed crash and issues with trace module. Mlaem should now always be in Trace when the Results tools are used.
+* Created a setting under the Settings->Wells menu that can be selected to only allow entry of one well at a time
     - If desired, you can paste the line `"limit entry to one well at a time": true,` into the "settings.json" file in the directory where Mlaem is located.
-4) The Edit tool ("E") can now highlight elements with the right mouse button
-5) Elements are now drawn over the plot contours, not vice-versa
-6) When right-clicking with the Trace tool, it will repeat the last command (as opposed to performing another trace)
+* The Edit tool ("E") can now highlight elements with the right mouse button
+* Elements are now drawn over the plot contours, not vice-versa
+* When right-clicking with the Trace tool, it will repeat the last command (as opposed to performing another trace)
+
+##### Version 6.A0 (Alpha 0, September 30, 2024)
+* Initial pre-release of Mlaem on Windows, MacOS-Apple, MacOS-Intel, and Linux
+
