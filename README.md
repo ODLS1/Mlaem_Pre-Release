@@ -60,11 +60,16 @@ Please make feature requests by following step 6) in the issue creation process 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
 
-#### ----------------------------------------------- Release Notes -----------------------------------------------
+#### -------------------------------------------- Release Notes --------------------------------------------
+
+##### Version 6.A2 (Alpha 2, October 10, 2024)
+* Fixed inability to switch grid type from the Grid Dialog
+* Fixed crash when clicking on multiple tools or layers in succession
+* Added ability to set a title for the plot (available through the menu in `View` -> `Set Plot Title`)
 
 ##### Version 6.A1 (Alpha 1, October 8, 2024)
 * Fixed crash and issues with trace module. Mlaem should now always be in Trace when the Results tools are used.
-* Created a setting under the Settings->Wells menu that can be selected to only allow entry of one well at a time
+* Created a setting under the `Settings` -> `Wells` menu that can be selected to only allow entry of one well at a time
     - If desired, you can paste the line `"limit entry to one well at a time": true,` into the "settings.json" file in the directory where Mlaem is located.
 * The Edit tool ("E") can now highlight elements with the right mouse button
 * Elements are now drawn over the plot contours, not vice-versa
