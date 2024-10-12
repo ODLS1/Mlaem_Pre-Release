@@ -60,7 +60,12 @@ Please make feature requests by following step 6) in the issue creation process 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
 
-#### -------------------------------------------- Release Notes --------------------------------------------
+#### ---------------------------------- Release Notes ----------------------------------
+
+##### Version 6.A3 (Alpha 3, October 11, 2024)
+* Fixed bug in opening invalid files that could result in overwriting a file (added a test to protect against future issues).
+* Added capabilty to save an image of the plot by itself (without windows on top of the plot) in `Project`->`Save Image of Plot`
+* Fixed event playback issues on Windows and MacOSApple.
 
 ##### Version 6.A2 (Alpha 2, October 10, 2024)
 * Fixed inability to switch grid type from the Grid Dialog
