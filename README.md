@@ -32,7 +32,17 @@ To ignore the "developer signature" warning, control-click on the `Mlaem_MacOS_I
 2) Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by running Mlaem for the first time from the Terminal app, as described above. Once the app has been started once, double-clicking on it should work in the future. However, double-clicking will set your "Home" folder as the startup location for Mlaem, so you will need to either navigate to the location where you want to store your Mlaem files when opening files from within Mlaem, or store your Mlaem files in your Home folder.
 
 #### Linux
-Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). For example, on Ubuntu Linux use the command `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_x86_64` to start Mlaem. Alternatively, you may be able to run Mlaem by double-clicking the executable name in the Linux file manager.
+There are two "flavors" of Linux executables available. One is designed to run with the XWindows protocol (which uses OpenGL GLX), and one to run with Wayland (which uses OpenGL EGL). You can determine which one you are usig by typing the following command in the terminal:
+
+    echo $XDG_SESSION_TYPE
+
+Follow the instructions for the type of protocol you are using. On Linux, as on windows, you can (likely) run Mlaem by double-clicking the executable name in the Linux file manager.
+
+##### Wayland Protocol (EGL)
+Open a Linux Terminal and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem. 
+
+##### XWindows Protocol (GLX)
+Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). For example, on Ubuntu Linux use the command `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_GLX_x86_64` to start Mlaem. 
 
 ### User Tutorial
 The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
