@@ -75,7 +75,7 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 ##### Version 6.A3 (Alpha 3, October 11, 2024)
 * Fixed bug in opening invalid files that could result in overwriting a file (added a test to protect against future issues).
 * Added capabilty to save an image of the plot by itself (without windows on top of the plot) in `Project`->`Save Image of Plot`
-* Fixed event playback issues on Windows and MacOSApple.
+* Fixed event playback issues on Windows and MacOS.
 
 ##### Version 6.A2 (Alpha 2, October 10, 2024)
 * Fixed inability to switch grid type from the Grid Dialog
@@ -83,7 +83,7 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 * Added ability to set a title for the plot (available through the menu in `View` -> `Set Plot Title`)
 
 ##### Version 6.A1 (Alpha 1, October 8, 2024)
-* Fixed crash and issues with trace module. Mlaem should now always be in Trace when the Results tools are used.
+* Fixed crash and issues with TRACE module. Mlaem should now always be in TRACE when the Results tools are used.
 * Created a setting under the `Settings` -> `Wells` menu that can be selected to only allow entry of one well at a time
     - If desired, you can paste the line `"limit entry to one well at a time": true,` into the "settings.json" file in the directory where Mlaem is located.
 * The Edit tool ("E") can now highlight elements with the right mouse button
