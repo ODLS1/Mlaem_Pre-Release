@@ -42,7 +42,7 @@ Follow the instructions for the type of protocol you are using. On Linux, as on 
 Open a Linux Terminal and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem. 
 
 ##### XWindows Protocol (GLX)
-Open a Linux Terminal and install the `glew` package (for managing the hardware interface to OpenGL). For example, on Ubuntu Linux use the command `sudo apt install libglew`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_GLX_x86_64` to start Mlaem. 
+Open a Linux Terminal and install the `glew-dev` package (for managing the hardware interface to OpenGL). For example, on Ubuntu Linux use the command `sudo apt install libglew-dev`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_GLX_x86_64` to start Mlaem. 
 
 ### User Tutorial
 The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
