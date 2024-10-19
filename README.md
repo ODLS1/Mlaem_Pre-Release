@@ -32,17 +32,11 @@ To ignore the "developer signature" warning, control-click on the `Mlaem_MacOS_I
 2) Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by running Mlaem for the first time from the Terminal app, as described above. Once the app has been started once, double-clicking on it should work in the future. However, double-clicking will set your "Home" folder as the startup location for Mlaem, so you will need to either navigate to the location where you want to store your Mlaem files when opening files from within Mlaem, or store your Mlaem files in your Home folder.
 
 #### Linux
-There are two "flavors" of Linux executables available. One is designed to run with the XWindows protocol (which uses OpenGL GLX), and one to run with Wayland (which uses OpenGL EGL). You can determine which one you are usig by typing the following command in the terminal:
+There are two "flavors" of Linux executables available. One is designed to run with the XWindows protocol (which uses OpenGL GLX), and one with Wayland (which uses OpenGL EGL). You can determine which one you are usig by typing the following command in the terminal:
 
     echo $XDG_SESSION_TYPE
 
-Follow the instructions for the type of protocol you are using. On Linux, as on windows, you can (likely) run Mlaem by double-clicking the executable name in the Linux file manager.
-
-##### Wayland Protocol (EGL)
-Open a Linux Terminal and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem. 
-
-##### XWindows Protocol (GLX)
-Open a Linux Terminal and install the `glew-dev` package (for managing the hardware interface to OpenGL). For example, on Ubuntu Linux use the command `sudo apt install libglew-dev`. Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_GLX_x86_64` to start Mlaem. 
+Open a Linux Terminal and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem on Wayland, or type `./Mlaem_Linux_GLX_x86_64` to start Mlaem on XWindows. On Linux, as on windows, you can (likely) run Mlaem by double-clicking the executable name in the Linux file manager.
 
 ### User Tutorial
 The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
@@ -70,26 +64,25 @@ Please make feature requests by following step 6) in the issue creation process 
 ### Thank You
 Thank you for taking the time to submit issues and feature requests for the pre-release vesion of Mlaem!
 
-#### ---------------------------------- Release Notes ----------------------------------
+#### ------------------------------- Release Notes -------------------------------
 
 ##### Version 6.A3 (Alpha 3, October 11, 2024)
 * Fixed bug in opening invalid files that could result in overwriting a file (added a test to protect against future issues).
-* Added capabilty to save an image of the plot by itself (without windows on top of the plot) in `Project`->`Save Image of Plot`
+* Added capabilty to save an image of the plot by itself (without windows on top of the plot) in `Project`->`Save Image of Plot`.
 * Fixed event playback issues on Windows and MacOS.
 
 ##### Version 6.A2 (Alpha 2, October 10, 2024)
-* Fixed inability to switch grid type from the Grid Dialog
-* Fixed crash when clicking on multiple tools or layers in succession
-* Added ability to set a title for the plot (available through the menu in `View` -> `Set Plot Title`)
+* Fixed inability to switch grid type from the Grid Dialog.
+* Fixed crash when clicking on multiple tools or layers in succession.
+* Added ability to set a title for the plot (available through the menu in `View` -> `Set Plot Title`).
 
 ##### Version 6.A1 (Alpha 1, October 8, 2024)
 * Fixed crash and issues with TRACE module. Mlaem should now always be in TRACE when the Results tools are used.
-* Created a setting under the `Settings` -> `Wells` menu that can be selected to only allow entry of one well at a time
+* Created a setting under the `Settings` -> `Wells` menu that can be selected to only allow entry of one well at a time.
     - If desired, you can paste the line `"limit entry to one well at a time": true,` into the "settings.json" file in the directory where Mlaem is located.
-* The Edit tool ("E") can now highlight elements with the right mouse button
-* Elements are now drawn over the plot contours, not vice-versa
-* When right-clicking with the Trace tool, it will repeat the last command (as opposed to performing another trace)
+* The Edit tool ("E") can now highlight elements with the right mouse button.
+* Elements are now drawn over the plot contours, not vice-versa.
+* When right-clicking with the Trace tool, it will repeat the last command (as opposed to performing another trace).
 
 ##### Version 6.A0 (Alpha 0, September 30, 2024)
-* Initial pre-release of Mlaem on Windows, MacOS-Apple, MacOS-Intel, and Linux
-
+* Initial pre-release of Mlaem on Windows, MacOS-Apple, MacOS-Intel, and Linux.
