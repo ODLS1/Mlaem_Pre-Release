@@ -39,8 +39,21 @@ There are two "flavors" of Linux executables available. One is designed to run w
 
 Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem on Wayland, or type `./Mlaem_Linux_GLX_x86_64` to start Mlaem on XWindows. On Linux, as on windows, you should be able to run Mlaem by double-clicking the executable name in the Linux file manager.
 
-### User Tutorial
-The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
+### Getting Started
+Mlaem has a few principles that govern the way it operates.
+1) Models are entered in "Input Mode", which defaults to the gray screen (or bright basemap) and has a large number of tools available.
+2) Elements are entered using the various tools in the tookit.
+    * Select a tool
+    * Choose default options in the dialog that pops up when the tool is selected
+    * Enter elements by clicking on the screen
+3) The primary documentation for the program is currently through the extensive "tool tips" that are available by hovering over tools and buttons.
+4) Click the "Solve" button to generate a solution for the model you created.
+    * The screen will switch to "Results Mode", which defaults to a black screen (or darkened basemap)
+    * Use the tools in Results Mode to inspect the results or to create pathline traces
+5) Save results by choosing `Project->Save` (which will save your model to an input file that can be read later) and/or by selecting `Project->Save Image of Plot` (which will save a `.png` image of your results without the various dialogs and windows).
+
+#### User Tutorial
+The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern graphical user interface (GUI).
 
 ### Reporting Issues
 Due to its pre-release nature, users are likely to encounter issues when using the software and are encouraged to report them following the steps below.
