@@ -22,21 +22,22 @@ Determine your Mac processor by clicking on the Apple logo on the upper-left of 
 The preferred method to run Mlaem is to open the Terminal app, navigate to the folder where you put the extracted ZIP files from GitHub, and typing `./Mlaem_MacOS_Apple` (or `./Mlaem_MacOS_Intel`, depending on your processor type) to start Mlaem. Navigating the folder (or directory) structure in the Terminal requires a few commands: `cd [folder name]` to go up the folder "tree", `cd ..` to go back down the folder tree, and `ls` to list the contents of a folder.
 
 ##### MacOS Apple M-Series Processor (e.g., Apple M1, M1 Pro, M2, etc.)
-To ignore the warning about running a file that may have Malware, go to `Settings`, `Privacy & Security` and scroll to the bottom. You should see `"Mlaem_MacOS_Apple" was blocked to protect your Mac.` Click `Open Anyway` and then `Open Anyway` again when the `Open "Mlaem_MacOS_Apple"?` window appears and use your fingerprint or password to allow the app to run. When Mlaem finally starts, allow it to access files. Mlaem may quit unexpectedly the first time it runs (this may be due to the security interruptions during startup). If that happens, ignore the message and start Mlaem again.
+To ignore the warning about running a file that may have Malware, go to `Settings`, `Privacy & Security` and scroll to the bottom. You should see `"Mlaem_MacOS_Apple" was blocked to protect your Mac.` Click `Open Anyway` and then `Open Anyway` again when the `Open "Mlaem_MacOS_Apple"?` window appears and use your fingerprint or password to allow the app to run. When Mlaem finally starts, allow it to access files.
 
 ##### MacOS Intel Processor (e.g., 2.7 GHz Intel Core i5, etc.)
 To ignore the "developer signature" warning, control-click on the `Mlaem_MacOS_Intel` file from a Finder window and choose `Open` from the shortcut menu.
 
 ##### MacOS Issues
-1) If you get the message "permission denied" when trying to run Mlaem, then it is possible that the permissions on the Mlaem executable were accidentally changed (for example, by copying the executable from one location to another). Fix this from the Terminal by navigating to the directory where the execuatble is located and typing `chmod +x Mlaem_MacOS_Apple` (or `chmod +x Mlaem_MacOS_Intel`, depending on your chip type).
-2) Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by running Mlaem for the first time from the Terminal app, as described above. Once the app has been started once, double-clicking on it should work in the future. However, double-clicking will set your "Home" folder as the startup location for Mlaem, so you will need to either navigate to the location where you want to store your Mlaem files when opening files from within Mlaem, or store your Mlaem files in your Home folder.
+1) Mlaem will occassionally fail to start up on both Mac platforms. You can ignore the error message and then try to start Mlaem again.
+2) If you get the message "permission denied" when trying to run Mlaem, then it is possible that the permissions on the Mlaem executable were accidentally changed (for example, by copying the executable from one location to another). Fix this from the Terminal by navigating to the directory where the execuatble is located and typing `chmod +x Mlaem_MacOS_Apple` (or `chmod +x Mlaem_MacOS_Intel`, depending on your chip type).
+3) Mlaem may not run successfully by double-clicking on the app. This issue can be resolved by running Mlaem for the first time from the Terminal app, as described above. Once the app has been started once, double-clicking on it should work in the future. However, double-clicking will set your "Home" folder as the startup location for Mlaem, so you will need to either navigate to the location where you want to store your Mlaem files when opening files from within Mlaem, or store your Mlaem files in your Home folder.
 
 #### Linux
-There are two "flavors" of Linux executables available. One is designed to run with the XWindows protocol (which uses OpenGL GLX), and one with Wayland (which uses OpenGL EGL). You can determine which one you are usig by typing the following command in the terminal:
+There are two "flavors" of Linux executables available. One is designed to run with XWindows protocol (which uses OpenGL GLX), and one with Wayland (which uses OpenGL EGL). You can determine which one you are usig by opening a Linux terminal typing the following command:
 
     echo $XDG_SESSION_TYPE
 
-Open a Linux Terminal and navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem on Wayland, or type `./Mlaem_Linux_GLX_x86_64` to start Mlaem on XWindows. On Linux, as on windows, you can (likely) run Mlaem by double-clicking the executable name in the Linux file manager.
+Next, navigate to the directory where you unzipped the Mlaem ZIP file downloaded from GitHub. Type `./Mlaem_Linux_EGL_x86_64` to start Mlaem on Wayland, or type `./Mlaem_Linux_GLX_x86_64` to start Mlaem on XWindows. On Linux, as on windows, you should be able to run Mlaem by double-clicking the executable name in the Linux file manager.
 
 ### User Tutorial
 The old (circa 1998) [user tutorial](Tutorial.pdf) is available to help users get started with Mlaem. However, please note that it is out-of-date and has not been updated for the modern GUI, which is still under development.
