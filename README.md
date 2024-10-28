@@ -80,6 +80,15 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
+##### Version 6.A4 (Alpha 4, Planned October 28, 2024)
+* Substantially increased the speed of the solve and the grid.
+* Added an "Information" window with current coordinates and aquifer properties. This window automatically appears in Results Mode and can be toggled with the `F4` key (aug-toggle when moving to Results Mode can be turned off in the `Settings` menu).
+* Added a tool to generate pathline traces that are captured by a well (this is called the "WG Tool" for Well-Generate).
+* Added a "View Results Tool" to view various computed results for the model at a selected point (which can be edited).
+* Added ability to choose to trace from the base of the aquifer, from the saturated top of the aquifer, or from an elevation (both for Trace and WGen tools)
+* Added information messages when trying to use the Inspect Tool on elements/places where it will not generate information.
+* Made the Command Console smaller.
+
 ##### Version 6.A3 (Alpha 3, October 11, 2024)
 * Fixed bug in opening invalid files that could result in overwriting a file (added a test to protect against future issues).
 * Added capabilty to save an image of the plot by itself (without windows on top of the plot) in `Project`->`Save Image of Plot`.
