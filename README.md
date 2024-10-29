@@ -80,7 +80,7 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
-##### Version 6.A4 (Alpha 4, Planned October 28, 2024)
+##### Version 6.A4 (Alpha 4, October 28, 2024)
 * Substantially increased the speed of the solve and the grid.
 * Added an "Information" window with current coordinates and aquifer properties. This window automatically appears in Results Mode and can be toggled with the `F4` key (aug-toggle when moving to Results Mode can be turned off in the `Settings` menu).
 * Added a tool to generate pathline traces that are captured by a well (this is called the "WG Tool" for Well-Generate).
