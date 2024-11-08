@@ -80,12 +80,12 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
-##### Version 6.A6 (Alpha 6, October 28, 2024)
+##### Version 6.A5 (Alpha 5, November 7, 2024)
 * Fixed issue in "Flow Net" option after adding or changing an element.
 
-##### Version 6.A5 (Alpha 5, October 28, 2024)
-* Enhanced Plot Dialog to allow customization of flow net plots
-* Added "Flow Net" option to Grid dialog (and moved around grid items to the various tabs)
+##### Version 6.A5 (Alpha 5, November 4, 2024)
+* Enhanced Plot Dialog to allow customization of flow net plots.
+* Added "Flow Net" option to Grid dialog (and moved around grid items to the various tabs).
 * Changed transient wells (<TWELL> command in the WELL module) to use the Specific Storage Coefficient instead of the Specific Yield Coefficient, updated HELP.
 
 ##### Version 6.A4 (Alpha 4, October 28, 2024)
