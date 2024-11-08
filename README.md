@@ -80,9 +80,17 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
+##### Version 6.A5 (Alpha 5, November 7, 2024)
+* Fixed issue in "Flow Net" option after adding or changing an element.
+
+##### Version 6.A5 (Alpha 5, November 4, 2024)
+* Enhanced Plot Dialog to allow customization of flow net plots.
+* Added "Flow Net" option to Grid dialog (and moved around grid items to the various tabs).
+* Changed transient wells (<TWELL> command in the WELL module) to use the Specific Storage Coefficient instead of the Specific Yield Coefficient, updated HELP.
+
 ##### Version 6.A4 (Alpha 4, October 28, 2024)
 * Substantially increased the speed of the solve and the grid.
-* Added an "Information" window with current coordinates and aquifer properties. This window automatically appears in Results Mode and can be toggled with the `F4` key (aug-toggle when moving to Results Mode can be turned off in the `Settings` menu).
+* Added an "Information" window with current coordinates and aquifer properties. This window automatically appears in Results Mode and can be toggled with the `F4` key (auto-toggle when moving to Results Mode can be turned off in the `Settings` menu).
 * Added a tool to generate pathline traces that are captured by a well (this is called the "WG Tool" for Well-Generate).
 * Added a "View Results Tool" to view various computed results for the model at a selected point (which can be edited).
 * Added ability to choose to trace from the base of the aquifer, from the saturated top of the aquifer, or from an elevation (both for Trace and WGen tools)
