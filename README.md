@@ -80,6 +80,14 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
+##### Version 6.A6 (Alpha 6, TBD)
+* Ability to select grid type from console.
+* Added capability to automatically log error messages and event files.
+* Fixed SAVE, READ, SSAVE, and SREAD commands in TRACE.
+* Enabled traces to persist after leaving Results Mode and then returning.
+* Fixed crash when using the RF move tool when no RF point had been enetered.
+* Created tool to optimize tests.
+
 ##### Version 6.A5 (Alpha 5, November 7, 2024)
 * Fixed issue in "Flow Net" option after adding or changing an element.
 
@@ -117,3 +125,7 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 ##### Version 6.A0 (Alpha 0, September 30, 2024)
 * Initial pre-release of Mlaem on Windows, MacOS-Apple, MacOS-Intel, and Linux.
+
+##### Earlier Changes
+* Added auto-save and auto-load of plots and grids for layers and types
+* Changed the way the reference point works
