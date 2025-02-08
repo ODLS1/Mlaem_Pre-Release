@@ -80,16 +80,22 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
-##### Version 6.A6 (Alpha 6, November 7, 2024)
+##### Next Release: Version 6.A7 (Alpha 7, TBD)
 * Ability to select grid type from console.
 * Added capability to automatically log error messages and event files.
 * Fixed SAVE, READ, SSAVE, and SREAD commands in TRACE.
 * Enabled traces to persist after leaving Results Mode and then returning.
 * Fixed crash when using the RF move tool when no RF point had been enetered.
+* Improved behavior of Results Mode tools.
+* Added hot keys for Solve, Grid, and Plot dialogs.
+* Fixed issue: global aquifer change not recognized.
 * Created tool to optimize tests.
 
-##### Version 6.A5 (Alpha 5, November 4, 2024)
+##### Version 6.A6 (Alpha 6, November 7, 2024)
 * Fixed issue in "Flow Net" option after adding or changing an element.
+* Improved default contours for flownet to always plot the 0 value for Psi.
+
+##### Version 6.A5 (Alpha 5, November 4, 2024)
 * Enhanced Plot Dialog to allow customization of flow net plots.
 * Added "Flow Net" option to Grid dialog (and moved around grid items to the various tabs).
 * Changed transient wells (<TWELL> command in the WELL module) to use the Specific Storage Coefficient instead of the Specific Yield Coefficient, updated HELP.
