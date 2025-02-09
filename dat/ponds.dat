@@ -2,6 +2,7 @@ ret
 aquifer
   thick 100
   base 0
+  perm 1
 ret
 given
   pond
