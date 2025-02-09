@@ -89,6 +89,10 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 * Improved behavior of Results Mode tools.
 * Added hot keys for Solve, Grid, and Plot dialogs.
 * Fixed issue: global aquifer change not recognized.
+* Set default reference value to 12.
+* Set default hydraulic conductivity to 10.
+* Set default for curvilinear element creation to discontinuous strings.
+* Fixed window maximization issue when playing events.
 * Created tool to optimize tests.
 
 ##### Version 6.A6 (Alpha 6, November 7, 2024)
