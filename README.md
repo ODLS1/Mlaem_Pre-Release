@@ -80,24 +80,34 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
-##### Next Release: Version 6.A7 (Alpha 7, TBD)
-* Ability to select grid type from console.
-* Added capability to automatically log error messages and event files.
-* Fixed SAVE, READ, SSAVE, and SREAD commands in TRACE.
+##### Version 6.A7 (Alpha 7, April 13, 2025)
+* Fixed bug: handle press/release of button/key if panning with `ctrl+left mouse`.
+* Fixed formatting for numbers in dialogs to show exponents when needed.
+* Added `"limit entry to one object at a time"` option in `settings.json`.
+* Apply darker dimming when a modal dialog is active.
+* Emit "beep" sound after click outside modal dialog, show message afer 2 clicks.
+* Always limit entry to one Global Aquifer or Reference Point at a time.
+* Added abilty to right-click to hilight any object with any or no tool selected.
+* Changed behavior: do not write out aquifer or reference point if not set.
+* Improved error handling
+    - Always show a system dialog with error information when Mlaem aborts.
+    - Always write out the current model when Mlaem aborts.
+* Improved default values in many dialogs.
+* Made entering and editing discontinuous curvilinear strings the defalt.
+* Fixed bug: Mlaem not aware when global aquifer changed.
+* Can automatically log errors and event files (set option in `settings.json`).
+* Fixed `SAVE`, `READ`, `SSAVE`, and `SREAD` commands in `TRACE`.
 * Enabled traces to persist after leaving Results Mode and then returning.
-* Fixed crash when using the RF move tool when no RF point had been enetered.
-* Improved behavior of Results Mode tools.
+* Fixed crash when using the `RF` move tool when no `RF` point had been enetered.
+* Improved behavior of Results Mode tools and coupling with console.
 * Added hot keys for Solve, Grid, and Plot dialogs.
-* Fixed issue: global aquifer change not recognized.
-* Set default reference value to 12.
-* Set default hydraulic conductivity to 10.
-* Set default for curvilinear element creation to discontinuous strings.
 * Fixed window maximization issue when playing events.
 * Created tool to optimize tests.
+* Bug fix: ability to select grid type from console (and input files).
 
 ##### Version 6.A6 (Alpha 6, November 7, 2024)
 * Fixed issue in "Flow Net" option after adding or changing an element.
-* Improved default contours for flownet to always plot the 0 value for Psi.
+* Improved default contours for flow net to always plot the 0 value for Psi.
 
 ##### Version 6.A5 (Alpha 5, November 4, 2024)
 * Enhanced Plot Dialog to allow customization of flow net plots.
