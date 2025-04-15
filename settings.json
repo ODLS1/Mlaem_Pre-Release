@@ -2,5 +2,7 @@
   "--record events file": "issue_events.txt",
   "initial app position": { "x": 100, "y": 100 },
   "initial app size": { "width": 1130, "height": 625 },
+  "limit entry to one object at a time": true,
+  "auto-record events": true,
   "--display scale": 1.5
 }
