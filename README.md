@@ -80,6 +80,13 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
+##### Version 6.A8 (Alpha 8, April 27, 2025)
+* Remove the current input tool when the Console is focused.
+* Check for duplicate measured head (`MHEAD`) points.
+* Show the Layer Info Dialog by default.
+* Allow gridding of `MHEAD` and `ATARD` `LRES`, `RRES`, and `FHEAD`.
+* Fixed bug: aquifer inhomogeneities not created directly after "OK" in dialog.
+
 ##### Version 6.A7 (Alpha 7, April 13, 2025)
 * Fixed bug: handle press/release of button/key if panning with `ctrl+left mouse`.
 * Fixed formatting for numbers in dialogs to show exponents when needed.
