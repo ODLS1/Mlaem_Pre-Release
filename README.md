@@ -81,10 +81,12 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 #### ------------------------------- Release Notes -------------------------------
 
 ##### Version 6.A8 (Alpha 8, April 27, 2025)
+* Combined the `Aquifer` and `Measured Head` tabs in `Grid Dialog`.
+* Changed `fistar` to `F-Head` in Grid Dialog for consistency with console.
 * Remove the current input tool when the Console is focused.
 * Check for duplicate measured head (`MHEAD`) points.
 * Show the Layer Info Dialog by default.
-* Allow gridding of `MHEAD` and `ATARD` `LRES`, `RRES`, and `FHEAD`.
+* Allow grid of `MHEAD` and `ATARD` `LRES`, `RRES`, and `FHEAD` without solution.
 * Fixed bug: aquifer inhomogeneities not created directly after "OK" in dialog.
 
 ##### Version 6.A7 (Alpha 7, April 13, 2025)
