@@ -80,6 +80,9 @@ Thank you for taking the time to submit issues and feature requests for the pre-
 
 #### ------------------------------- Release Notes -------------------------------
 
+##### Version 6.A8 Dev (Alpha 8 Developer Version, November 1, 2025)
+* Show the arrow mouse cursor during event playback
+
 ##### Version 6.A8 (Alpha 8, April 27, 2025)
 * Combined the `Aquifer` and `Measured Head` tabs in `Grid Dialog`.
 * Changed `fistar` to `F-Head` in Grid Dialog for consistency with console.
